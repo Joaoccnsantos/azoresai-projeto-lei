@@ -2,10 +2,10 @@
 
 > Subtítulo ou tagline curta — o problema que resolve e para quem.
 
-**Estudante:** [Nome] · [Número]  
+**Estudante:** [João Santos] · [1802935]  
 **Orientador:** Pedro Pestana  
 **UC:** Projecto de Engenharia Informática · Universidade Aberta · 2025/26  
-**Repositório:** [URL deste repositório]
+**Repositório:** [[URL deste repositório](https://github.com/Joaoccnsantos/azoresai-projeto-lei)]
 
 ---
 
@@ -13,9 +13,8 @@
 
 <!-- Actualizar a cada entrega. Escolher um estado e apagar os outros. -->
 
-🟢 **Verde** — A correr conforme planeado.  
-🟡 **Amarelo** — [Descrever o que está em risco ou bloqueado, numa linha.]  
-🔴 **Vermelho** — [Descrever o problema crítico, numa linha.]
+🟢 **Verde** — A correr conforme planeado. Proposta submetida 20 março 
+
 
 ---
 
@@ -24,9 +23,9 @@
 <!-- Lista das funcionalidades do MVP que estão funcionais. -->
 <!-- Ser específico: não "o login está feito" mas "autenticação por email/password com JWT, sessão persistente em localStorage." -->
 
-- [ ] Funcionalidade A — [descrição breve]
-- [ ] Funcionalidade B — [descrição breve]
-- [ ] Funcionalidade C — [descrição breve]
+- [ ] Funcionalidade A — Sistema fusão multimodal: combina classificação webcam (Cheerio scraping SpotAzores + Jimp análise pixel RGB) com OpenWeatherMap API, regras adaptativas (fog prioriza qualquer source, montanha exige concordância para "clear"), degradação cascata visual → meteorologia → cache Firestore
+- [ ] Funcionalidade B — Classificador RGB: brightness médio 80-150 = fog denso / <10 = offline, contrast por desvio padrão <25 = fog uniforme, blue ratio zona superior >60% = céu limpo, thresholds adaptativos por contexto geográfico (montanha conservadora, costa permissiva)
+- [ ] Funcionalidade C — Persistência Firestore com execução periódica: collection "visibility" documentos por localização, campos timestamp/classificação/sources contribuintes/nível confiança, Cloud Scheduler trigger cada 10 minutos, scraping + análise + fusão + write automático
 
 ---
 
