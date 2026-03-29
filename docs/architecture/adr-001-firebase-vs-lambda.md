@@ -105,7 +105,7 @@ Utilizamos **Google Cloud Functions for Firebase** como plataforma serverless.
 
 ## Consequências
 
-### Positivas ✅
+### Positivas 
 
 **Integração Cloud Scheduler:**
 ```javascript
@@ -220,11 +220,11 @@ firebase functions:config:set owm.api_key="YOUR_KEY"
 ## Validação Decisão
 
 **Critérios sucesso (validar semana 7):**
-- ✅ 144 execuções/dia sem falhas
-- ✅ Cold start <2s (medido via logs)
-- ✅ Custo $0 (tier gratuito suficiente)
-- ✅ Deploy <5 minutos
-- ✅ Logs acessíveis e debugáveis
+-  144 execuções/dia sem falhas
+-  Cold start <2s (medido via logs)
+-  Custo $0 (tier gratuito suficiente)
+-  Deploy <5 minutos
+-  Logs acessíveis e debugáveis
 
 **Se falhar:** Reavaliar AWS Lambda como alternativa.
 
