@@ -8,17 +8,18 @@
 
 ## Sem. 1 · 17–21 mar
 
-**Feito:** [O que foi concluído esta semana]  
-**Bloqueou:** [O que impediu progresso, ou "Nada"]  
-**Próxima semana:** [O que está planeado]
+**Feito:** Proposta projeto redigida: sinopse, MVP com critérios aceitação preliminares, calendário, stack Firebase/Firestore. Submissão 25 março.
+
+**Bloqueou:** Nada
+**Próxima semana:** Incorporar feedback professor. Iniciar documentação arquitetura (MoSCoW, ADRs).
 
 ---
 
 ## Sem. 2 · 24–28 mar
 
-**Feito:**  
-**Bloqueou:**  
-**Próxima semana:**
+**Feito:**  Proposta aprovada com feedback (critérios aceitação formato Given-When-Then para relatórios futuros). MoSCoW completo (Must/Should/Could/Won't). ADR-001 Firebase Functions vs Lambda com análise observabilidade. Estrutura repositório GitHub organizada. README atualizado.
+**Bloqueou:** Nada
+**Próxima semana:** ADR-002 Jimp vs OpenCV. ADR-003 Firestore vs PostgreSQL. ADR-004 Regras vs ML. C4 Level 1 e 2.
 
 ---
 
