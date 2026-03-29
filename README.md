@@ -29,7 +29,8 @@
 
 **MVP Planeado (implementação sem. 5-12):**
 - Sistema fusão multimodal (webcam + meteorologia)
-- Classificador RGB (brightness, contrast, blue ratio)
+- Classificador RGB via análise de histogramas de cor e contraste local (brightness médio, desvio padrão para contrast,
+  blue ratio zona superior da imagem).
 - Persistência Firestore com execução periódica
 
 Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
@@ -54,7 +55,7 @@ azoresai-projeto-lei/
 
 ## Como Instalar e Correr
 
-_Implementação inicia semana 5 (14-25 abril). Instruções serão atualizadas quando houver código._
+Implementação inicia semana 5 (14-25 abril). Instruções serão atualizadas quando houver código.
 
 **Pré-requisitos planeados:**
 - Node.js 20+
