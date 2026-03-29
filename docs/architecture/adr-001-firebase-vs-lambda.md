@@ -170,6 +170,9 @@ firebase deploy --only functions
 - Scraping 6 webcams + análise + fusão deve completar <60s
 - **Mitigação:** Se timeout, dividir função (scrapeCameras1-3, scrapeCameras4-6). Não antecipado.
 
+**Observabilidade fragmentada:**
+A arquitetura serverless introduz o desafio da fragmentação de logs. Para mitigar este risco, o sistema utiliza o Google Cloud Monitoring para monitorização proativa. Foram definidos thresholds de alerta (Success Rate < 80% por localização) que acionam notificações automáticas, garantindo que falhas em fontes externas (webcams offline ou instabilidade na API OpenWeatherMap) sejam detetadas e corrigidas antes de impactarem o utilizador final.
+
 ---
 
 ## Notas de Implementação
