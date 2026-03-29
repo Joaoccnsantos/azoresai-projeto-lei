@@ -1,110 +1,96 @@
-# [Título do Projecto]
+# Sistema de Fusão Multimodal para Estimativa de Visibilidade
 
-> Subtítulo ou tagline curta — o problema que resolve e para quem.
+> Combina análise visual RGB de webcams com dados meteorológicos para estimativa confiável de visibilidade em tempo real na ilha de São Miguel, Açores — resolvendo o problema de fontes individuais imperfeitas mas complementares.
 
-**Estudante:** [João Santos] · [1802935]  
+**Estudante:** João Santos · 1802935  
 **Orientador:** Pedro Pestana  
 **UC:** Projecto de Engenharia Informática · Universidade Aberta · 2025/26  
-**Repositório:** [[URL deste repositório](https://github.com/Joaoccnsantos/azoresai-projeto-lei)]
+**Repositório:** https://github.com/Joaoccnsantos/azoresai-projeto-lei
 
 ---
 
 ## Estado actual
 
-<!-- Actualizar a cada entrega. Escolher um estado e apagar os outros. -->
-
-🟢 **Verde** — A correr conforme planeado. Proposta submetida 20 março 
-
+🟢 **Verde** — A correr conforme planeado. Proposta aprovada 25 março.
 
 ---
 
-## O que está implementado
+## Progresso Actual (Semana 3 de 16)
 
-<!-- Lista das funcionalidades do MVP que estão funcionais. -->
-<!-- Ser específico: não "o login está feito" mas "autenticação por email/password com JWT, sessão persistente em localStorage." -->
+**Fase:** Documentação arquitetura  
+**Próxima fase:** Implementação (inicia semana 5)
 
-- [ ] Funcionalidade A — Sistema fusão multimodal: combina classificação webcam (Cheerio scraping SpotAzores + Jimp análise pixel RGB) com OpenWeatherMap API, regras adaptativas (fog prioriza qualquer source, montanha exige concordância para "clear"), degradação cascata visual → meteorologia → cache Firestore
-- [ ] Funcionalidade B — Classificador RGB: brightness médio 80-150 = fog denso / <10 = offline, contrast por desvio padrão <25 = fog uniforme, blue ratio zona superior >60% = céu limpo, thresholds adaptativos por contexto geográfico (montanha conservadora, costa permissiva)
-- [ ] Funcionalidade C — Persistência Firestore com execução periódica: collection "visibility" documentos por localização, campos timestamp/classificação/sources contribuintes/nível confiança, Cloud Scheduler trigger cada 10 minutos, scraping + análise + fusão + write automático
+**Completado:**
+- Proposta aprovada (20 março)
+- MoSCoW definido
+- ADR-001 (Firebase Functions)
+- ADRs adicionais em curso
+- Diagramas C4 planeados
+
+**MVP Planeado (implementação sem. 5-12):**
+- Sistema fusão multimodal (webcam + meteorologia)
+- Classificador RGB (brightness, contrast, blue ratio)
+- Persistência Firestore com execução periódica
+
+Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
 
 ---
 
-## O que está pendente
-
-<!-- O que falta do MVP e porquê. Se algo foi descontinuado, explicar a decisão. -->
-
-- [ ] Funcionalidade D — [estado e razão do atraso se aplicável]
-- [ ] Funcionalidade E — [estado]
-
----
-
-## Como instalar e correr
-
-<!-- Instruções que funcionam numa máquina limpa. Se não funcionar na demo, não conta como feito. -->
-
-### Pré-requisitos
-
+## Estrutura do Repositório
 ```
-[ex: Node.js 20+, Python 3.11+, Docker, etc.]
-```
-
-### Instalação
-
-```bash
-# 1. Clonar o repositório
-git clone [URL]
-cd [nome-do-repo]
-
-# 2. Instalar dependências
-[ex: npm install / pip install -r requirements.txt]
-
-# 3. Configurar variáveis de ambiente
-cp .env.example .env
-# Editar .env com os valores correctos
-
-# 4. Correr
-[ex: npm run dev / python app.py]
-```
-
-### Acesso
-
-```
-[ex: http://localhost:3000]
-[Credenciais de teste se aplicável]
+azoresai-projeto-lei/
+├── docs/
+│   ├── architecture/        # ADRs
+│   │   └── adr-001-firebase-vs-lambda.md
+│   ├── diagrams/            # C4 diagramas (L1, L2, L3)
+│   └── scope/               # MoSCoW, changelog, requisitos
+│       ├── moscow.md
+│       └── changelog.md
+├── functions/               # Firebase Functions (sem. 5+)
+└── README.md
 ```
 
 ---
 
-## Decisões de arquitectura principais
+## Como Instalar e Correr
 
-<!-- 2 a 4 decisões relevantes com justificação breve. Para o detalhe completo, ver docs/architecture/adr/. -->
+_Implementação inicia semana 5 (14-25 abril). Instruções serão atualizadas quando houver código._
+
+**Pré-requisitos planeados:**
+- Node.js 20+
+- Firebase CLI
+- Conta Firebase (tier gratuito)
+- API key OpenWeatherMap
+
+---
+
+## Decisões de Arquitectura Principais
+
+Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 | Decisão | Alternativa considerada | Razão da escolha |
 |---------|------------------------|-----------------|
-| [ex: PostgreSQL] | [ex: MongoDB] | [ex: dados relacionais com integridade referencial necessária] |
-| [ex: React] | [ex: Vue] | [ex: maior familiaridade da equipa, ecossistema] |
+| Firebase Functions | AWS Lambda | Cloud Scheduler integrado, SDK Firestore nativo |
+| Jimp | OpenCV | JavaScript puro, sem deps nativas |
+| Firestore | PostgreSQL | Real-time, já usado na app AzoresAI |
 
 ---
 
-## Referências e IA utilizada
+## Referências e IA Utilizada
 
-<!-- Bibliotecas, APIs externas, tutoriais seguidos. -->
-<!-- Distinguir o que foi escrito de raiz do que foi adaptado ou gerado. -->
+### Referências Técnicas
+- [C4 Model](https://c4model.com) - Modelação arquitetura software
+- [MoSCoW Prioritisation](https://www.agilebusiness.org/dsdm-project-framework/moscow-prioritisation.html)
+- [Conventional Commits](https://www.conventionalcommits.org/)
+- [Firebase Functions Docs](https://firebase.google.com/docs/functions)
+- [Jimp Documentation](https://github.com/jimp-dev/jimp)
 
-### Referências técnicas
-
-- [Referência 1]
-- [Referência 2]
-
-### Ferramentas de IA utilizadas
-
-<!-- Obrigatório declarar. Não é penalizado. -->
+### Ferramentas de IA Utilizadas
 
 | Ferramenta | Para que foi usada |
 |-----------|-------------------|
-| [ex: GitHub Copilot] | [ex: autocompletar código boilerplate] |
-| [ex: Claude] | [ex: explorar alternativas de arquitectura] |
+| Claude    | Estruturação documentação técnica, exploração alternativas arquitetura, escrita ADRs |
 
 ---
 
-*Última actualização: [data] · [semana do semestre, ex: Sem. 7]*
+*Última actualização: 29 março 2026 · Semana 3*
