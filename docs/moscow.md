@@ -38,6 +38,11 @@
 - Metadados: location_id, context (mountain/coast), degraded (boolean)
 - Execução periódica via Cloud Scheduler (trigger cada 10 minutos)
 
+
+---
+
+## Should Have (Importante mas não bloqueante)
+
  ### Sunset/Sunrise Dinâmico
 - Cálculo automático horário pôr-do-sol/nascer-do-sol para coordenadas São Miguel (37.7°N, 25.7°W)
 - Suspensão análise RGB durante período noturno (sunset+30min até sunrise-30min)
@@ -45,11 +50,7 @@
 - Evita false positives "offline" — brightness noturno natural (~5-10) indistinguível de webcam desligada
 - Implementação: biblioteca SunCalc (Node.js, cálculo astronómico offline) ou API Sunrise-Sunset.org
 - **Justificação elevação Could→Should:** Identificada ambiguidade crítica em ADR-002. Sem validação horário solar, sistema classifica erroneamente todas as noites como "offline", comprometendo confiança. Essencial para operação 24/7 confiável.
-
----
-
-## Should Have (Importante mas não bloqueante)
-
+  
 ### Thresholds Adaptativos
 - Montanha (altitude >400m): brightness <150 = fog, >170 = clear
 - Costa (altitude <200m): brightness <100 = fog, >140 = clear
