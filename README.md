@@ -21,7 +21,7 @@
 **Próxima fase:** Implementação (inicia semana 5)
 
 **Completado:**
-- Proposta aprovada (20 março)
+- Proposta aprovada (25 março)
 - MoSCoW definido
 - ADR-001 (Firebase Functions)
 - ADRs adicionais em curso
