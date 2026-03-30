@@ -66,11 +66,11 @@ async function analyzeImage(imageUrl) {
 - Suporte CUDA para GPU acceleration
 
 **Contras:**
-- ❌ **Dependências nativas:** Requer compilação bindings C++ no deploy
-- ❌ **Tamanho:** >50MB vs Jimp ~2MB (impacto cold start Functions)
-- ❌ **Complexidade setup:** cmake, Python, bibliotecas sistema
-- ❌ **Overkill:** Métricas RGB simples não justificam CV avançada
-- ❌ **Firebase Functions:** Compilação nativa problemática em ambiente serverless
+-  **Dependências nativas:** Requer compilação bindings C++ no deploy
+-  **Tamanho:** >50MB vs Jimp ~2MB (impacto cold start Functions)
+-  **Complexidade setup:** cmake, Python, bibliotecas sistema
+-  **Overkill:** Métricas RGB simples não justificam CV avançada
+-  **Firebase Functions:** Compilação nativa problemática em ambiente serverless
 
 **Razão rejeição:** Complexidade instalação incompatível com serverless. Métricas necessárias (brightness agregado, desvio padrão, ratio cor) não requerem algoritmos CV avançados.
 
@@ -84,10 +84,10 @@ async function analyzeImage(imageUrl) {
 - Menor footprint que OpenCV
 
 **Contras:**
-- ❌ Focado em transformações (resize, crop), não análise pixel-level
-- ❌ API limitada para estatísticas agregadas (mean, stddev por canal)
-- ❌ Requer contornar API para acesso direto pixel data
-- ❌ Dependências nativas (libvips), compilação em Functions
+-  Focado em transformações (resize, crop), não análise pixel-level
+-  API limitada para estatísticas agregadas (mean, stddev por canal)
+-  Requer contornar API para acesso direto pixel data
+-  Dependências nativas (libvips), compilação em Functions
 
 **Razão rejeição:** Ferramenta certa para transformações, não para análise estatística pixel-wise. Jimp oferece acesso direto bitmap sem overhead.
 
@@ -100,10 +100,10 @@ async function analyzeImage(imageUrl) {
 - Manipulação transformações 2D
 
 **Contras:**
-- ❌ Dependências nativas (Cairo graphics)
-- ❌ API verbosa para operações agregadas
-- ❌ Overhead rendering context desnecessário
-- ❌ Menos conveniente que Jimp para análise estatística
+-  Dependências nativas (Cairo graphics)
+-  API verbosa para operações agregadas
+-  Overhead rendering context desnecessário
+-  Menos conveniente que Jimp para análise estatística
 
 **Razão rejeição:** API desenhada para rendering, não análise. Jimp mais direto para caso de uso.
 
@@ -116,10 +116,10 @@ async function analyzeImage(imageUrl) {
 - Transfer learning possível (MobileNet para features)
 
 **Contras:**
-- ❌ **Massive overkill:** Modelo pré-treinado desnecessário para métricas RGB
-- ❌ Tamanho bundle >10MB (vs Jimp 2MB)
-- ❌ Curva aprendizagem tensor operations
-- ❌ Training data inexistente (projeto Won't Have ML - ver MoSCoW)
+-  **Massive overkill:** Modelo pré-treinado desnecessário para métricas RGB
+-  Tamanho bundle >10MB (vs Jimp 2MB)
+-  Curva aprendizagem tensor operations
+-  Training data inexistente (projeto Won't Have ML - ver MoSCoW)
 
 **Razão rejeição:** Decidido conscientemente não usar ML (ADR-004 futuro). Métricas RGB explícitas suficientes e auditáveis.
 
@@ -127,7 +127,7 @@ async function analyzeImage(imageUrl) {
 
 ## Consequências
 
-### Positivas ✅
+### Positivas 
 
 **JavaScript puro (zero dependências nativas):**
 ```bash
@@ -179,7 +179,7 @@ if (!isMountain && avgBrightness < 100) {
 
 ---
 
-### Negativas ❌
+### Negativas 
 
 **Performance inferior a OpenCV:**
 - Jimp: ~200ms por imagem (Node.js loop)
@@ -304,10 +304,10 @@ describe('Classificador RGB', () => {
 ## Validação Decisão
 
 **Critérios sucesso (validar semana 13):**
-- ✅ Classifica corretamente >85% casos em dataset 20 imagens
-- ✅ Latência <5s por imagem (6 webcams = <30s total)
-- ✅ Zero erros deploy Firebase Functions (sem deps nativas)
-- ✅ Código legível e auditável por júri sem background CV
+-  Classifica corretamente >85% casos em dataset 20 imagens
+-  Latência <5s por imagem (6 webcams = <30s total)
+-  Zero erros deploy Firebase Functions (sem deps nativas)
+-  Código legível e auditável por júri sem background CV
 
 **Se falhar:** Reavaliar Sharp (performance) ou OpenCV (precisão), documentar razão mudança em ADR-002-rev.
 
