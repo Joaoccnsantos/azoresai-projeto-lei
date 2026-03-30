@@ -197,7 +197,7 @@ if (!isMountain && avgBrightness < 100) {
 - Última release major: v0.22 (estável)
 - **Mitigação:** Biblioteca madura (>10 anos), large community (8k+ stars GitHub), alternativas (Sharp) disponíveis se manutenção cessar.
 
-- **Ambiguidade noite vs offline:**
+ **Ambiguidade noite vs offline:**
 - Threshold `avgBrightness < 10` para deteção offline confunde-se com período noturno (sem luz natural)
 - Webcam funcional à noite terá brightness ~5-10, indistinguível de webcam offline
 - **Mitigação:** Integração sunset/sunrise check antes de análise RGB. Sistema suspende classificação visual entre sunset+30min e sunrise-30min (horário local Açores), utilizando exclusivamente dados meteorológicos OWM durante período noturno.
