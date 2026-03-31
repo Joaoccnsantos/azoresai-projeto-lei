@@ -23,7 +23,7 @@
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
 **Completado:**
--  Proposta aprovada (20 março)
+-  Proposta aprovada (25 março)
 -  MoSCoW definido ([docs/scope/moscow.md](docs/scope/moscow.md))
 -  ADR-001: Firebase Functions vs Lambda
 -  ADR-002: Jimp vs OpenCV para análise RGB
