@@ -292,8 +292,8 @@ service cloud.firestore {
 
 | Critério | Firestore | PostgreSQL | MongoDB | Escolha |
 |----------|-----------|------------|---------|---------|
-| Setup inicial | ⚡ Imediato (já ativo Firebase) |  30min+ (Cloud SQL provision) | 20min (Atlas signup) |  Firestore |
-| Integração Functions | ⚡ Nativa (Admin SDK) | 🔧 Externa (`pg` lib) | 🔧 Externa (`mongodb` lib) |  Firestore |
+| Setup inicial |  Imediato (já ativo Firebase) |  30min+ (Cloud SQL provision) | 20min (Atlas signup) |  Firestore |
+| Integração Functions |  Nativa (Admin SDK) |  Externa (`pg` lib) |  Externa (`mongodb` lib) |  Firestore |
 | Latência read |  50-100ms |  100-200ms (TCP) |  100-150ms (network hop) | Firestore |
 | Tier gratuito |  50k reads/dia |  Inexistente | 512MB Atlas | Firestore |
 | Real-time |  Built-in (WebSockets) |  Manual (polling) |  Change Streams |  Firestore |
