@@ -11,27 +11,44 @@
 
 ## Estado actual
 
-🟢 **Verde** — A correr conforme planeado. Proposta aprovada 25 março.
+🟢 **Verde** — A correr conforme planeado. Proposta aprovada 20 março.
 
 ---
 
-## Progresso Actual (Semana 3 de 16)
+## Progresso Actual
 
-**Fase:** Documentação arquitetura  
+**Semana 3 (31 mar - 6 abr)** — Documentação arquitetura  
 **Próxima fase:** Implementação (inicia semana 5)
 
-**Completado:**
-- Proposta aprovada (25 março)
-- MoSCoW definido
-- ADR-001 (Firebase Functions)
-- ADRs adicionais em curso
-- Diagramas C4 planeados
+**Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
-**MVP Planeado (implementação sem. 5-12):**
-- Sistema fusão multimodal (webcam + meteorologia)
-- Classificador RGB via análise de histogramas de cor e contraste local (brightness médio, desvio padrão para contrast,
-  blue ratio zona superior da imagem).
-- Persistência Firestore com execução periódica
+**Completado:**
+-  Proposta aprovada (20 março)
+-  MoSCoW definido ([docs/scope/moscow.md](docs/scope/moscow.md))
+-  ADR-001: Firebase Functions vs Lambda
+-  ADR-002: Jimp vs OpenCV para análise RGB
+-  Bug produção identificado e corrigido (threshold Ponta Delgada 0.99→0.55)
+-  Changelog semanas 1-3 atualizado
+-  ADR-003: Firestore vs PostgreSQL (em curso)
+-  C4 diagramas planeados esta semana
+
+**Próximas etapas (Semana 3):**
+- ADR-004: Regras fusão vs ML (decisão multimodal)
+- C4 Level 1: Diagrama contexto (sistema, utilizadores, externos)
+- C4 Level 2: Diagrama containers (Functions, Firestore, APIs)
+- Schema Firestore preliminar
+
+---
+
+## MVP Planeado
+
+_Sistema v1 funcional em produção. Projeto académico valida e melhora v1→v2._
+
+**Must Have (v2 melhorias):**
+- Sistema fusão multimodal validado cientificamente (webcam RGB + meteorologia OWM)
+- Classificador RGB via análise de histogramas de cor e contraste local
+- Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
+- Persistência Firestore com execução periódica otimizada
 
 Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
 
@@ -42,8 +59,9 @@ Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
 azoresai-projeto-lei/
 ├── docs/
 │   ├── architecture/        # ADRs
-│   │   └── adr-001-firebase-vs-lambda.md
-│   ├── diagrams/            # C4 diagramas (L1, L2, L3)
+│   │   ├── adr-001-firebase-vs-lambda.md
+│   │   └── adr-002-jimp-vs-opencv.md
+│   ├── diagrams/            # C4 diagramas (planeados sem. 3)
 │   └── scope/               # MoSCoW, changelog, requisitos
 │       ├── moscow.md
 │       └── changelog.md
@@ -55,7 +73,7 @@ azoresai-projeto-lei/
 
 ## Como Instalar e Correr
 
-Implementação inicia semana 5 (14-25 abril). Instruções serão atualizadas quando houver código.
+_Implementação inicia semana 5 (14-25 abril). Instruções serão atualizadas quando houver código._
 
 **Pré-requisitos planeados:**
 - Node.js 20+
@@ -90,8 +108,8 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 | Ferramenta | Para que foi usada |
 |-----------|-------------------|
-| Claude    | Estruturação documentação técnica, exploração alternativas arquitetura, escrita ADRs |
+| Claude (Anthropic) | Estruturação documentação técnica, exploração alternativas arquitetura, escrita ADRs |
 
 ---
 
-*Última actualização: 29 março 2026 · Semana 3*
+*Última actualização: 31 março 2026 · Semana 3*
