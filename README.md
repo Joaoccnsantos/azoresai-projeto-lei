@@ -11,7 +11,7 @@
 
 ## Estado actual
 
-🟢 **Verde** — A correr conforme planeado. Proposta aprovada 20 março.
+🟢 **Verde** — A correr conforme planeado. Proposta aprovada 25 março.
 
 ---
 
