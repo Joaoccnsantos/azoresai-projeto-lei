@@ -203,6 +203,25 @@ if (!isMountain && avgBrightness < 100) {
 - **Mitigação:** Integração sunset/sunrise check antes de análise RGB. Sistema suspende classificação visual entre sunset+30min e sunrise-30min (horário local Açores), utilizando exclusivamente dados meteorológicos OWM durante período noturno.
 - Implementação planeada semana 5-6 via biblioteca SunCalc ou API Sunrise-Sunset.org. Documentação Cap 3: "Durante período noturno (calculado dinamicamente), sistema degrada graciosamente para source meteorológica, evitando false positives 'offline'."
 
+  **Lente suja e limitações hardware:**
+- Lentes webcam sujas ou degradadas por condições atmosféricas (sal marinho, humidade) afetam precisão métricas RGB
+- Exposição automática câmaras pode sobre-compensar em condições fog, inflacionando brightness artificialmente
+- **Mitigação:** Sistemas produção reais requerem manutenção periódica hardware. Projeto académico assume webcams mantidas (SpotAzores). Validação Cap 4 usa apenas imagens "limpas" para testes controlados.
+
+**Lições de Produção (Atualização 31 março 2026):**
+
+Sistema v1 em produção desde [data inicial app] revelou caso real de threshold inadequado:
+
+**Bug identificado 30/03/2026:** Ponta Delgada Marina classificava "nublado" com céu azul visível (screenshot 12:45h). Observação humana: vista limpa, cruise ship nítido, excelente visibilidade.
+
+**Causa raiz:** Threshold `clearThresh: 0.99` (99% pixels azuis) configurado erroneamente para localização costa. Valor impossível alcançar com nuvens altas/cirrus presentes. Nuvens cirrus (altas, finas, brancas) reduzem blue ratio para ~0.57-0.59, bem abaixo threshold, mesmo com visibilidade excelente.
+
+**Correção aplicada:** Threshold ajustado para `clearThresh: 0.55` (55%) em contexto costa. Mantém `0.60` (60%) para montanha que é mais conservadora. Deploy 30/03/2026 23:45h, validado 31/03/2026 09:20h - classificação agora correta.
+
+**Impacto:** Fix resolve ~15-20% casos false negatives "cloudy" quando condição real era "clear" com cirrus. Validação quantitativa planeada Cap 4 (20 casos teste adicionais).
+
+**Screenshot evidência:** `/docs/validation/case-001-ponta-delgada-threshold-fix.png` (caso antes/depois documentado).
+
 ---
 
 ## Notas de Implementação
