@@ -212,7 +212,7 @@ if (!isMountain && avgBrightness < 100) {
 
 Sistema v1 em produção desde [data inicial app] revelou caso real de threshold inadequado:
 
-**Bug identificado 30/03/2026:** Ponta Delgada Marina classificava "nublado" com céu azul visível (screenshot 12:45h). Observação humana: vista limpa, cruise ship nítido, excelente visibilidade.
+**Bug identificado 30/03/2026:** Ponta Delgada Marina classificava "nublado" com céu azul visível (screenshot 12:45h). Observação humana: vista limpa, excelente visibilidade.
 
 **Causa raiz:** Threshold `clearThresh: 0.99` (99% pixels azuis) configurado erroneamente para localização costa. Valor impossível alcançar com nuvens altas/cirrus presentes. Nuvens cirrus (altas, finas, brancas) reduzem blue ratio para ~0.57-0.59, bem abaixo threshold, mesmo com visibilidade excelente.
 
