@@ -1,7 +1,7 @@
 # ADR-004: Regras de Fusão Explícitas vs Machine Learning
 
 **Status:** Accepted  
-**Data:** 31 março 2026  
+**Data:** 1 Abril 2026  
 **Autor:** João Santos  
 **Contexto:** Sistema Fusão Multimodal Visibilidade
 
