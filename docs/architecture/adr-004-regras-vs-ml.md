@@ -269,10 +269,10 @@ if (brightness < 10 && isNight()) return 'night';  // Ambiguidade resolvida ADR-
 
 | Critério | Regras Explícitas | Random Forest | CNN | Escolha |
 |----------|------------------|---------------|-----|---------|
-| Dataset necessário | ⚡ 0 (conhecimento domínio) |  >500 casos rotulados |  >5000 imagens | Regras |
+| Dataset necessário |  0 (conhecimento domínio) |  >500 casos rotulados |  >5000 imagens | Regras |
 | Interpretabilidade |  Completa (if-then legível) |  Parcial (feature importance) |  Zero (black-box) |  Regras |
-| Latência inference | ⚡ <1ms |  50-100ms |  200-500ms |  Regras |
-| Infraestrutura |  Zero overhead | 🔧 Scikit-learn (~50MB) | 🔧 TF.js (>100MB) |  Regras |
+| Latência inference |  <1ms |  50-100ms |  200-500ms |  Regras |
+| Infraestrutura |  Zero overhead |  Scikit-learn (~50MB) |  TF.js (>100MB) |  Regras |
 | Manutenção |  Edit código + deploy |  Retrain periódico |  MLOps pipeline |  Regras |
 | Precisão potencial |  ~85-90% (estimado) |  ~90-95% (se dataset bom) |  ~95%+ (se dataset grande) |  Suficiente MVP |
 
