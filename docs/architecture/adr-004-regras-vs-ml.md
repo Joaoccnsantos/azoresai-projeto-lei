@@ -188,7 +188,6 @@ P(clear | camClear, owmClear, mountain) =
 // Qualquer pessoa lê código e entende decisão
 if (owmState === 'fog') return 'fog';  // "Se meteorologia diz fog, é fog"
 ```
-→ Júri defesa consegue auditar lógica. Professor valida raciocínio. Debug trivial.
 
 **Zero overhead infraestrutura:**
 - Sem modelos serializados (.pkl, .h5, .onnx)
