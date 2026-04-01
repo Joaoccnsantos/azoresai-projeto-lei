@@ -3,7 +3,7 @@
 **Status:** Accepted  
 **Data:** 31 março 2026  
 **Autor:** João Santos  
-**Contexto:** Sistema Fusão Multimodal Visibilidadee
+**Contexto:** Sistema Fusão Multimodal Visibilidade
 
 ---
 
