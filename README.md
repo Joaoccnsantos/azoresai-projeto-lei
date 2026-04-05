@@ -61,7 +61,9 @@ azoresai-projeto-lei/
 │   ├── architecture/        # ADRs
 │   │   ├── adr-001-firebase-vs-lambda.md
 │   │   └── adr-002-jimp-vs-opencv.md
-│   ├── diagrams/            # C4 diagramas (planeados sem. 3)
+│   ├── diagrams/           
+│   ├── c4-context.png
+│   └── c4-containers.png
 │   └── scope/               # MoSCoW, changelog, requisitos
 │       ├── moscow.md
 │       └── changelog.md
