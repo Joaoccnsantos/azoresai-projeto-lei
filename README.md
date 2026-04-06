@@ -54,6 +54,7 @@ Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
 ---
 
 ## Estrutura do Repositório
+```
 azoresai-projeto-lei/
 ├── docs/
 │   ├── architecture/        # ADRs
@@ -61,15 +62,14 @@ azoresai-projeto-lei/
 │   │   ├── adr-002-jimp-vs-opencv.md
 │   │   ├── adr-003-firestore-vs-postgresql.md
 │   │   └── adr-004-regras-vs-ml.md
-│   ├── c4-context.png       # C4 Level 1 
-│   ├── c4-containers.png    # C4 Level 2 
+│   ├── c4-context.png       # C4 Level 1
+│   ├── c4-containers.png    # C4 Level 2
 │   └── scope/               # MoSCoW, changelog, requisitos
 │       ├── moscow.md
 │       └── changelog.md
 ├── functions/               # Firebase Functions (sem. 5+)
 └── README.md
-
----
+```
 
 ## Como Instalar e Correr
 
