@@ -17,7 +17,7 @@
 
 ## Progresso Actual
 
-**Semana 3 (31 mar - 6 abr)** — Documentação arquitetura  **COMPLETA**  
+**Semana 3 (31 mar - 6 abr)** — Documentação arquitetura 
 **Próxima fase:** Implementação (inicia semana 5)
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
