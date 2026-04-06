@@ -29,7 +29,7 @@
 ## Sem. 3 · 31 mar–6 abr
 
 **Feito:**
--  Bug produção corrigido: Threshold `clearThresh` Ponta Delgada estava em 0.99 (impossível!), causando classificação "nublado" em dias clear com nuvens altas. Ajustado para 0.55 (55% pixels azuis). Deploy 30/03 23:45h, validado 31/03 09:20h - funcionando corretamente. Documentado ADR-002 secção "Lições Produção".
+-  Bug produção corrigido: Threshold `clearThresh` Ponta Delgada estava em 0.99, causando classificação "nublado" em dias clear com nuvens altas. Ajustado para 0.55 (55% pixels azuis). Deploy 30/03 23:45h, validado 31/03 09:20h - funcionando corretamente. Documentado ADR-002 secção "Lições Produção".
 -  ADR-002: Jimp vs OpenCV completo (incluindo bug fix threshold + ambiguidade noite vs offline)
 -  ADR-003: Firestore vs PostgreSQL completo (document model, tier gratuito, comparação quantitativa)
 -  ADR-004: Regras Fusão vs ML completo (decisão consciente Won't Have ML fundamentada)
