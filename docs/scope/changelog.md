@@ -26,22 +26,23 @@
 
 ---
 
-## Sem. 3 · 31 mar–4 abr
+## Sem. 3 · 31 mar–6 abr
 
 **Feito:**
--  Bug produção corrigido: Threshold `clearThresh` Ponta Delgada estava em 0.99, causando classificação "nublado" em dias clear com nuvens altas. Ajustado para 0.55 (55% pixels azuis). Deploy 30/03 23:45h, validado 31/03 09:20h - funcionando corretamente. Documentado ADR-002 secção "Lições Produção".
-- ADR-003: Firestore vs PostgreSQL (em curso)
-- README atualizado com progresso semana 2
+-  Bug produção corrigido: Threshold `clearThresh` Ponta Delgada estava em 0.99 (impossível!), causando classificação "nublado" em dias clear com nuvens altas. Ajustado para 0.55 (55% pixels azuis). Deploy 30/03 23:45h, validado 31/03 09:20h - funcionando corretamente. Documentado ADR-002 secção "Lições Produção".
+-  ADR-002: Jimp vs OpenCV completo (incluindo bug fix threshold + ambiguidade noite vs offline)
+-  ADR-003: Firestore vs PostgreSQL completo (document model, tier gratuito, comparação quantitativa)
+-  ADR-004: Regras Fusão vs ML completo (decisão consciente Won't Have ML fundamentada)
+-  C4 Level 1 (Context): Diagrama ecossistema AzoresAI com Firestore ponte desacoplamento
+-  C4 Level 2 (Containers): Arquitetura interna backend (Cloud Functions, Scraper, Analyzer, Fusion, Firestore)
+-  README atualizado progresso semana 3
 
 **Bloqueou:**
 - Nada
 
 **Próxima semana:**
-- ADR-004: Regras fusão vs ML
-- C4 Level 1 e 2
-- Schema Firestore preliminar
-
----
+- Schema Firestore (diagrama collection + documento)
+- Polimento documentação (opcional)
 
 ## Sem. 4 · 7–11 abr
 
