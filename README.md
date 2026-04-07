@@ -62,8 +62,9 @@ azoresai-projeto-lei/
 │   │   ├── adr-002-jimp-vs-opencv.md
 │   │   ├── adr-003-firestore-vs-postgresql.md
 │   │   └── adr-004-regras-vs-ml.md
-│   ├── c4-context.png       # C4 Level 1
-│   ├── c4-containers.png    # C4 Level 2
+│   ├── diagrams/            # Diagramas C4
+│   │   ├── c4-context.png
+│   │   └── c4-containers.png
 │   └── scope/               # MoSCoW, changelog, requisitos
 │       ├── moscow.md
 │       └── changelog.md
