@@ -42,13 +42,22 @@
 - Nada
 
 **Próxima semana:**
-- Polimento documentação (opcional)
+- Polimento documentação
 
 ## Sem. 4 · 7–11 abr
 
-**Feito:**  
-**Bloqueou:**  
+**Feito:**
+-  Organização estrutura: Diagramas C4 movidos para `/docs/diagrams/` (refactoring repositório)
+-  Schema Firestore: Diagrama NoSQL collection `weather_data` + document structure completo
+-  README: Estrutura repositório atualizada 
+
+
+**Bloqueou:**
+- Nada
+
 **Próxima semana:**
+- Polimento documentação 
+
 
 ---
 
