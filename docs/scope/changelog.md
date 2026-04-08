@@ -47,7 +47,7 @@
 ## Sem. 4 · 7–11 abr
 
 **Feito:**
--  Organização estrutura: Diagramas C4 movidos para `/docs/diagrams/` (refactoring repositório)
+-  Organização estrutura: Diagramas C4 movidos para `/docs/diagrams/` 
 -  Schema Firestore: Diagrama NoSQL collection `weather_data` + document structure completo
 -  README: Estrutura repositório atualizada 
 
