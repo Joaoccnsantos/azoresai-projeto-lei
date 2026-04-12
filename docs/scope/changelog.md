@@ -47,16 +47,17 @@
 ## Sem. 4 · 7–11 abr
 
 **Feito:**
--  Organização estrutura: Diagramas C4 movidos para `/docs/diagrams/` 
+-  Organização estrutura: Diagramas C4 movidos para `/docs/diagrams/` (refactoring repositório)
 -  Schema Firestore: Diagrama NoSQL collection `weather_data` + document structure completo
--  README: Estrutura repositório atualizada 
-
+-  README: Estrutura repositório atualizada (reflete nova organização)
+-  Bug validação identificado: Classificação "noite" 18:16h quando sunset 20:15h (evidencia necessidade sunset dinâmico Should Have)
+-  Pasta validation criada: Documentação casos teste com screenshot + análise
 
 **Bloqueou:**
 - Nada
 
 **Próxima semana:**
-- Polimento documentação 
+- Polimento ADRs (leitura + correções)
 
 
 ---
