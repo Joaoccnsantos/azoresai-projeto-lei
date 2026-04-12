@@ -35,20 +35,29 @@
 -  ADR-004: Regras Fusão vs ML completo (decisão consciente Won't Have ML fundamentada)
 -  C4 Level 1 (Context): Diagrama ecossistema AzoresAI com Firestore ponte desacoplamento
 -  C4 Level 2 (Containers): Arquitetura interna backend (Cloud Functions, Scraper, Analyzer, Fusion, Firestore)
+-  Schema Firestore: Diagrama NoSQL collection weather_data + document structure
 -  README atualizado progresso semana 3
 
 **Bloqueou:**
 - Nada
 
 **Próxima semana:**
-- Schema Firestore (diagrama collection + documento)
-- Polimento documentação (opcional)
+- Polimento documentação
 
 ## Sem. 4 · 7–11 abr
 
-**Feito:**  
-**Bloqueou:**  
+**Feito:**
+-  Organização estrutura: Diagramas C4 movidos para `/docs/diagrams/` 
+-  Schema Firestore: Diagrama NoSQL collection `weather_data` + document structure completo
+-  README: Estrutura repositório atualizada 
+
+
+**Bloqueou:**
+- Nada
+
 **Próxima semana:**
+- Polimento documentação 
+
 
 ---
 
