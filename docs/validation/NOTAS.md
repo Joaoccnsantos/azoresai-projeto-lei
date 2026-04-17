@@ -12,7 +12,7 @@
 - Temperatura: 15°C, pouco nublado
 
 **Sistema classificou:** "Noite"   
-**Correto seria:** "Vista limpa" (baseado em visibilidade 30km)
+**Correto seria:**"clear" / "Vista limpa" (PT/EN) (baseado em visibilidade 30km)
 
 **Causa raiz:** Sistema usa threshold hora fixa sem considerar sunset dinâmico (varia com estações)
 
@@ -30,4 +30,13 @@
 - 2 casos "offline"
 
 **Total necessário:** 11 casos validação Cap 4
+
+## Caso 002: Furnas - Retoma após manutenção
+
+**Data:** 17 abril 2026  
+**Localização:** Furnas  
+**Condições reais:** Webcam voltou de manutenção  
+**Sistema classificou:** "nublado"   
+**Correto:** Sistema retomou classificação automática corretamente  
+**Notas:** Removido de TEMP_OFFLINE_WEBCAMS após confirmação webcam online
 
