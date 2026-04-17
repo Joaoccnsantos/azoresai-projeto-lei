@@ -64,9 +64,17 @@
 
 ## Sem. 5 · 14–17 abr
 
-**Feito:**  
-**Bloqueou:**  
+**Feito:**
+- Fix produção: Furnas removida de TEMP_OFFLINE_WEBCAMS - webcam voltou de manutenção
+- Validação caso 002 documentado: Furnas retoma classificação automática corretamente
+- NOTAS.md validação atualizado (caso 001 + caso 002)
+
+**Bloqueou:**
+- Nada
+
 **Próxima semana:**
+- Polimento ADRs (leitura + correções)
+- Preparação para apresentação
 
 ---
 
