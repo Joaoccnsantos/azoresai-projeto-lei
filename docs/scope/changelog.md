@@ -62,19 +62,22 @@
 
 ---
 
-## Sem. 5 · 14–17 abr
+## Sem. 5 · 14–20 abr
 
 **Feito:**
-- Fix produção: Furnas removida de TEMP_OFFLINE_WEBCAMS - webcam voltou de manutenção
-- Validação caso 002 documentado: Furnas retoma classificação automática corretamente
-- NOTAS.md validação atualizado (caso 001 + caso 002)
+-  Fix produção: Furnas removida de TEMP_OFFLINE_WEBCAMS - webcam voltou de manutenção
+-  Validação caso 002 documentado: Furnas retoma classificação automática corretamente
+-  NOTAS.md validação atualizado (caso 001 + caso 002)
+-  Polimento ADR-001: Status/Data adicionados, backticks código corrigidos
+-  Polimento ADR-002: Data produção, nº casos (20→10-12), screenshot path corrigidos
+-  Polimento ADR-003: Status Accepted adicionado
+-  Polimento ADR-004: Nº casos (20→10-12) corrigidos
 
 **Bloqueou:**
 - Nada
 
 **Próxima semana:**
-- Polimento ADRs (leitura + correções)
-- Preparação para apresentação
+- Implementação sunset dinâmico (SunCalc)
 
 ---
 
