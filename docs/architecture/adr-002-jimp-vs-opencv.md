@@ -179,7 +179,7 @@ if (!isMountain && avgBrightness < 100) {
 
 ---
 
-### Negativas 
+### Negativas ❌
 
 **Performance inferior a OpenCV:**
 - Jimp: ~200ms por imagem (Node.js loop)
