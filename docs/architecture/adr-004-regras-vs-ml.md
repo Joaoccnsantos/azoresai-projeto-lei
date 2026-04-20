@@ -225,7 +225,7 @@ if (brightness < 10 && isNight()) return 'night';  // Ambiguidade resolvida ADR-
 **Precisão limitada por conhecimento humano:**
 - Regras capturam apenas o que engenheiro conhece/codifica
 - Padrões sutis não-óbvios (ex: `brightness × contrast × hour` interação não-linear) não descobertos
-- **Mitigação:** Validação Cap 4 com 20 casos teste. Se precisão <85%, considerar ML em trabalho futuro. Threshold 85% suficiente para MVP.
+- **Mitigação:** 10-12 casos teste. Se precisão <85%, considerar ML em trabalho futuro. Threshold 85% suficiente para MVP.
 
 **Manutenção crescente com complexidade:**
 - Adicionar 8ª regra, 9ª regra... código fica nested ifs difícil ler
@@ -240,14 +240,14 @@ if (brightness < 10 && isNight()) return 'night';  // Ambiguidade resolvida ADR-
 **Dependência conhecimento domínio:**
 - Regras assumem engenheiro entende microclimas Açores
 - Risco bias pessoal ("acho que montanha deve ser conservadora" - validado?)
-- **Mitigação:** Validação científica semana 13 (20 casos) testa se suposições corretas. MoSCoW Could Have: comparar 6 vs 8 localizações valida regras generalizam.
+- **Mitigação:** semana 13 (10-12 casos) testa se suposições corretas. MoSCoW Could Have: comparar 6 vs 8 localizações valida regras generalizam.
 
 ---
 
 ## Validação Científica (Planeada Semana 13)
 
 **Metodologia teste:**
-1. Coletar 20 casos reais (screenshots webcam + dados OWM + observação humana)
+1. Coletar 10-12 casos reais (screenshots webcam + dados OWM + observação humana)
 2. Executar sistema: classificação regras explícitas
 3. Comparar: sistema vs observação humana (ground truth)
 4. Calcular: accuracy, precision, recall por classe (clear/cloudy/fog)
