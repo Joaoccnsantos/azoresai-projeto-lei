@@ -1,7 +1,7 @@
 # ADR-001: Firebase Functions vs AWS Lambda
 
 **Status:** Accepted  
-**Data:** 20 março 2026
+**Data:** 20 março 2026  
 **Autor:** João Santos  
 **Contexto:** Sistema Fusão Multimodal Visibilidade
 
