@@ -48,11 +48,11 @@ Utilizamos **Google Cloud Functions for Firebase** como plataforma serverless.
 - EventBridge para scheduling
 
 **Contras:**
--  Requer configuração EventBridge separada (não integrado)
--  Integração Firestore via SDK externo (não nativo como Firebase Admin)
--  Curva aprendizagem AWS console (IAM, VPC, CloudFormation)
--  Vendor lock-in Amazon (mesmo problema que Google)
--  Deploy mais complexo (SAM/CDK ou console manual)
+- Requer configuração EventBridge separada (não integrado)
+- Integração Firestore via SDK externo (não nativo como Firebase Admin)
+- Curva aprendizagem AWS console (IAM, VPC, CloudFormation)
+- Vendor lock-in Amazon (mesmo problema que Google)
+- Deploy mais complexo (SAM/CDK ou console manual)
 
 **Razão rejeição:** Complexidade configuração > benefícios para projeto académico.
 
@@ -66,10 +66,10 @@ Utilizamos **Google Cloud Functions for Firebase** como plataforma serverless.
 - Maior controle sobre ambiente execução
 
 **Contras:**
--  Requer Dockerfile (overhead setup)
--  Cloud Scheduler configuração separada (não integrado como Functions)
--  Overkill para tasks simples (scraping + análise RGB)
--  Cold start potencialmente maior (container vs function)
+- Requer Dockerfile (overhead setup)
+- Cloud Scheduler configuração separada (não integrado como Functions)
+- Overkill para tasks simples (scraping + análise RGB)
+- Cold start potencialmente maior (container vs function)
 
 **Razão rejeição:** Complexidade desnecessária. Functions suficientes para caso de uso.
 
@@ -82,10 +82,10 @@ Utilizamos **Google Cloud Functions for Firebase** como plataforma serverless.
 - Developer experience excelente
 
 **Contras:**
--  Timeout 10s no tier gratuito (insuficiente para scraping + análise)
--  Foco em HTTP requests, não cron jobs nativos
--  Sem integração nativa Firestore (requer SDK externo)
--  Pricing proibitivo para execuções frequentes (144/dia)
+- Timeout 10s no tier gratuito (insuficiente para scraping + análise)
+- Foco em HTTP requests, não cron jobs nativos
+- Sem integração nativa Firestore (requer SDK externo)
+- Pricing proibitivo para execuções frequentes (144/dia)
 
 **Razão rejeição:** Limitações tier gratuito incompatíveis com requisitos.
 
@@ -97,9 +97,9 @@ Utilizamos **Google Cloud Functions for Firebase** como plataforma serverless.
 - Dynos gratuitos disponíveis
 
 **Contras:**
--  Heroku free tier descontinuado (Nov 2022)
--  Scheduler intervalo mínimo 10min (OK) mas sem precisão (executa "around" horário)
--  Dyno sleep após 30min inatividade (cold start garantido)
+- Heroku free tier descontinuado (Nov 2022)
+- Scheduler intervalo mínimo 10min (OK) mas sem precisão (executa "around" horário)
+- Dyno sleep após 30min inatividade (cold start garantido)
 
 **Razão rejeição:** Tier gratuito inexistente pós-2022.
 
@@ -107,20 +107,17 @@ Utilizamos **Google Cloud Functions for Firebase** como plataforma serverless.
 
 ## Consequências
 
-### Positivas 
+### Positivas ✅
 
 **Integração Cloud Scheduler:**
 ```javascript
-// functions/index.js
-const functions = require('firebase-functions');
-
 exports.scrapeCameras = functions.pubsub
   .schedule('every 10 minutes')
   .timeZone('Europe/Lisbon')
   .onRun(async (context) => {
     // Scraping + análise + fusão
   });
-
+```
 → Zero configuração externa. Cron syntax direto no código.
 
 **SDK Firebase Admin nativo:**
@@ -130,7 +127,7 @@ admin.initializeApp();
 const db = admin.firestore();
 
 await db.collection('visibility').doc('lagoa_fogo').set({...});
-
+```
 → Sem autenticação manual. Credenciais automáticas em ambiente Functions.
 
 **Logs centralizados:**
@@ -148,11 +145,11 @@ await db.collection('visibility').doc('lagoa_fogo').set({...});
 ```bash
 firebase deploy --only functions
 # Rollback: firebase functions:log --only scrapeCameras
-
+```
 
 ---
 
-### Negativas 
+### Negativas ❌
 
 **Vendor lock-in Google:**
 - Migração futura para AWS/Azure requer reescrever triggers
@@ -184,13 +181,12 @@ A arquitetura serverless introduz o desafio da fragmentação de logs. Para miti
 npm install -g firebase-tools
 firebase login
 firebase init functions
-# Selecionar: JavaScript, ESLint yes
 cd functions
 npm install jimp cheerio axios
-
+```
 
 ### Estrutura esperada:
-
+```
 functions/
 ├── index.js          # Entry point, exports scrapeCameras
 ├── scraper.js        # SpotAzores HTML parsing (Cheerio)
@@ -198,7 +194,7 @@ functions/
 ├── fusion.js         # Multimodal fusion logic
 ├── package.json
 └── node_modules/
-
+```
 
 ### Dependências críticas:
 ```json
@@ -212,7 +208,7 @@ functions/
     "axios": "^1.6.0"
   }
 }
-
+```
 
 ### Ambiente variáveis:
 ```bash
