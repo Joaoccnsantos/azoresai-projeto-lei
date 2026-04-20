@@ -66,11 +66,11 @@ async function analyzeImage(imageUrl) {
 - Suporte CUDA para GPU acceleration
 
 **Contras:**
--  **Dependências nativas:** Requer compilação bindings C++ no deploy
--  **Tamanho:** >50MB vs Jimp ~2MB (impacto cold start Functions)
--  **Complexidade setup:** cmake, Python, bibliotecas sistema
--  **Overkill:** Métricas RGB simples não justificam CV avançada
--  **Firebase Functions:** Compilação nativa problemática em ambiente serverless
+- **Dependências nativas:** Requer compilação bindings C++ no deploy
+- **Tamanho:** >50MB vs Jimp ~2MB (impacto cold start Functions)
+- **Complexidade setup:** cmake, Python, bibliotecas sistema
+- **Overkill:** Métricas RGB simples não justificam CV avançada
+- **Firebase Functions:** Compilação nativa problemática em ambiente serverless
 
 **Razão rejeição:** Complexidade instalação incompatível com serverless. Métricas necessárias (brightness agregado, desvio padrão, ratio cor) não requerem algoritmos CV avançados.
 
@@ -84,10 +84,10 @@ async function analyzeImage(imageUrl) {
 - Menor footprint que OpenCV
 
 **Contras:**
--  Focado em transformações (resize, crop), não análise pixel-level
--  API limitada para estatísticas agregadas (mean, stddev por canal)
--  Requer contornar API para acesso direto pixel data
--  Dependências nativas (libvips), compilação em Functions
+- Focado em transformações (resize, crop), não análise pixel-level
+- API limitada para estatísticas agregadas (mean, stddev por canal)
+- Requer contornar API para acesso direto pixel data
+- Dependências nativas (libvips), compilação em Functions
 
 **Razão rejeição:** Ferramenta certa para transformações, não para análise estatística pixel-wise. Jimp oferece acesso direto bitmap sem overhead.
 
@@ -100,10 +100,10 @@ async function analyzeImage(imageUrl) {
 - Manipulação transformações 2D
 
 **Contras:**
--  Dependências nativas (Cairo graphics)
--  API verbosa para operações agregadas
--  Overhead rendering context desnecessário
--  Menos conveniente que Jimp para análise estatística
+- Dependências nativas (Cairo graphics)
+- API verbosa para operações agregadas
+- Overhead rendering context desnecessário
+- Menos conveniente que Jimp para análise estatística
 
 **Razão rejeição:** API desenhada para rendering, não análise. Jimp mais direto para caso de uso.
 
@@ -116,10 +116,10 @@ async function analyzeImage(imageUrl) {
 - Transfer learning possível (MobileNet para features)
 
 **Contras:**
--  **Massive overkill:** Modelo pré-treinado desnecessário para métricas RGB
--  Tamanho bundle >10MB (vs Jimp 2MB)
--  Curva aprendizagem tensor operations
--  Training data inexistente (projeto Won't Have ML - ver MoSCoW)
+- **Massive overkill:** Modelo pré-treinado desnecessário para métricas RGB
+- Tamanho bundle >10MB (vs Jimp 2MB)
+- Curva aprendizagem tensor operations
+- Training data inexistente (projeto Won't Have ML - ver MoSCoW)
 
 **Razão rejeição:** Decidido conscientemente não usar ML (ADR-004 futuro). Métricas RGB explícitas suficientes e auditáveis.
 
@@ -175,7 +175,7 @@ if (!isMountain && avgBrightness < 100) {
 - Brightness agregado distingue fog (80-150) vs clear (>170) vs offline (<10)
 - Contrast (σ) distingue fog uniforme (σ<25) vs nuvens variáveis (σ>40)
 - Blue ratio céu identifica clear (>60% pixels azuis região superior)
-- Testes com 20 imagens demonstram precisão >85% (Cap 4 relatório)
+- Testes com 10-12 imagens demonstram precisão >85% (Cap 4 relatório)
 
 ---
 
@@ -197,20 +197,20 @@ if (!isMountain && avgBrightness < 100) {
 - Última release major: v0.22 (estável)
 - **Mitigação:** Biblioteca madura (>10 anos), large community (8k+ stars GitHub), alternativas (Sharp) disponíveis se manutenção cessar.
 
- **Ambiguidade noite vs offline:**
+**Ambiguidade noite vs offline:**
 - Threshold `avgBrightness < 10` para deteção offline confunde-se com período noturno (sem luz natural)
 - Webcam funcional à noite terá brightness ~5-10, indistinguível de webcam offline
 - **Mitigação:** Integração sunset/sunrise check antes de análise RGB. Sistema suspende classificação visual entre sunset+30min e sunrise-30min (horário local Açores), utilizando exclusivamente dados meteorológicos OWM durante período noturno.
-- Implementação planeada semana 5-6 via biblioteca SunCalc ou API Sunrise-Sunset.org. Documentação Cap 3: "Durante período noturno (calculado dinamicamente), sistema degrada graciosamente para source meteorológica, evitando false positives 'offline'."
+- Implementação planeada semana 5-6 via biblioteca SunCalc ou API Sunrise-Sunset.org.
 
-  **Lente suja e limitações hardware:**
+**Lente suja e limitações hardware:**
 - Lentes webcam sujas ou degradadas por condições atmosféricas (sal marinho, humidade) afetam precisão métricas RGB
 - Exposição automática câmaras pode sobre-compensar em condições fog, inflacionando brightness artificialmente
 - **Mitigação:** Sistemas produção reais requerem manutenção periódica hardware. Projeto académico assume webcams mantidas (SpotAzores). Validação Cap 4 usa apenas imagens "limpas" para testes controlados.
 
 **Lições de Produção (Atualização 31 março 2026):**
 
-Sistema v1 em produção desde [data inicial app] revelou caso real de threshold inadequado:
+Sistema v1 em produção desde março 2026 revelou caso real de threshold inadequado:
 
 **Bug identificado 30/03/2026:** Ponta Delgada Marina classificava "nublado" com céu azul visível (screenshot 12:45h). Observação humana: vista limpa, excelente visibilidade.
 
@@ -218,9 +218,9 @@ Sistema v1 em produção desde [data inicial app] revelou caso real de threshold
 
 **Correção aplicada:** Threshold ajustado para `clearThresh: 0.55` (55%) em contexto costa. Mantém `0.60` (60%) para montanha que é mais conservadora. Deploy 30/03/2026 23:45h, validado 31/03/2026 09:20h - classificação agora correta.
 
-**Impacto:** Fix resolve ~15-20% casos false negatives "cloudy" quando condição real era "clear" com cirrus. Validação quantitativa planeada Cap 4 (20 casos teste adicionais).
+**Impacto:** Fix resolve ~15-20% casos false negatives "cloudy" quando condição real era "clear" com cirrus. Validação quantitativa planeada Cap 4 (10-12 casos teste).
 
-**Screenshot evidência:** `/docs/validation/case-001-ponta-delgada-threshold-fix.png` (caso antes/depois documentado).
+**Screenshot evidência:** `/docs/validation/bug-noite-prematura.png` (caso documentado).
 
 ---
 
@@ -314,7 +314,7 @@ describe('Classificador RGB', () => {
     expect(result.classification).toBe('offline');
   });
   
-  // 18 casos adicionais (Cap 4)
+  // 10-12 casos adicionais (Cap 4)
 });
 ```
 
@@ -323,7 +323,7 @@ describe('Classificador RGB', () => {
 ## Validação Decisão
 
 **Critérios sucesso (validar semana 13):**
--  Classifica corretamente >85% casos em dataset 20 imagens
+-  Classifica corretamente >85% casos em dataset 10-12 imagens
 -  Latência <5s por imagem (6 webcams = <30s total)
 -  Zero erros deploy Firebase Functions (sem deps nativas)
 -  Código legível e auditável por júri sem background CV
