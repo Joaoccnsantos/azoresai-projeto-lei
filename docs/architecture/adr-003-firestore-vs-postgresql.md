@@ -1,5 +1,6 @@
 # ADR-003: Firestore vs PostgreSQL para Persistência
 
+**Status:** Accepted  
 **Data:** 31 março 2026  
 **Autor:** João Santos  
 **Contexto:** Sistema Fusão Multimodal Visibilidade
