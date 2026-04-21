@@ -40,3 +40,29 @@
 **Correto:** Sistema retomou classificação automática corretamente  
 **Notas:** Removido de TEMP_OFFLINE_WEBCAMS após confirmação webcam online
 
+---
+
+## Fix 001: SunCalc - Sunset Dinâmico
+
+**Data:** 21 abril 2026  
+**Relacionado com:** Bug 001 (classificação "noite" prematura)  
+**Solução implementada:** SunCalc v1.9.0
+
+**Antes (threshold fixo):**
+```javascript
+return (hora >= 21 || hora <= 6);  // ERRADO! Igual todo o ano
+```
+
+**Depois (dinâmico):**
+```javascript
+const times = SunCalc.getTimes(now, 37.7412, -25.6756);
+// Sunset hoje: 20:24h → IsNight: false às 15:03h ✅
+```
+
+**Confirmação logs produção:**
+- Sunrise: 07:00:51
+- Sunset: 20:24:14  
+- IsNight: false às 15:03h ✅
+
+**Deploy:** 21/04/2026 ~15:00h  
+**Estado:** Bug 001 RESOLVIDO ✅
