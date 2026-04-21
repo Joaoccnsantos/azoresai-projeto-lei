@@ -38,7 +38,7 @@
 
 **Próximas etapas (Semana 6):**
 - Implementação sunset dinâmico (SunCalc)
-- Preparação defesa oral (perguntas difíceis)
+
 
 ---
 
