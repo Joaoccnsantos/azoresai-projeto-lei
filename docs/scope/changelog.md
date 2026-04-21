@@ -81,9 +81,11 @@
 
 ---
 
-## Sem. 6 · 22–25 abr
+## Sem. 6 · 22–27 abr
 
-**Feito:**  
+**Feito:**
+-  Implementado SunCalc sunset dinâmico (resolve bug noite prematura)
+-  Confirmado via logs: IsNight: false às 15:03h, Sunset 20:24h 
 **Bloqueou:**  
 **Próxima semana:**
 
