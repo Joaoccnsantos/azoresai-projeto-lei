@@ -17,27 +17,17 @@
 
 ## Progresso Actual
 
-**Semana 5 (14–20 abr)** — Polimento documentação + fix produção  
-**Próxima fase:** Implementação (inicia semana 6)
+**Semana 6 (21–27 abr)** — Implementação sunset dinâmico  
+**Próxima fase:** Confidence score + Relatório intercalar (semana 8)
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
 **Completado:**
--  MoSCoW definido ([docs/scope/moscow.md](docs/scope/moscow.md))
--  ADR-001: Firebase Functions vs Lambda
--  ADR-002: Jimp vs OpenCV para análise RGB
--  ADR-003: Firestore vs PostgreSQL
--  ADR-004: Regras Fusão vs Machine Learning
--  Bug produção identificado e corrigido (threshold Ponta Delgada 0.99→0.55)
--  C4 Level 1: Diagrama contexto (ecossistema AzoresAI)
--  C4 Level 2: Diagrama containers (arquitetura interna backend)
--  Schema Firestore: Diagrama collection + document structure
--  Pasta validation: Bug noite prematura documentado (caso 001 + 002)
--  Polimento ADRs 001-004 (formatação, datas, nº casos)
--  Fix produção: Furnas webcam volta de manutenção
-
-**Próximas etapas (Semana 6):**
-- Implementação sunset dinâmico (SunCalc)
+-  SunCalc implementado: sunset/sunrise dinâmico (resolve Bug 001 noite prematura)
+-  Confirmado logs produção: IsNight: false às 15:03h, Sunset 20:24h
+**Próximas etapas (Semana 7):**
+- Confidence score (Should Have MoSCoW)
+- Preparação relatório intercalar (semana 8)
 
 
 ---
@@ -125,4 +115,4 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 ---
 
-*Última actualização: 20 abril 2026 · Semana 5*
+*Última actualização: 21 abril 2026 · Semana 6*
