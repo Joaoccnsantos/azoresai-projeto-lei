@@ -23,12 +23,24 @@
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
 **Completado:**
--  SunCalc implementado: sunset/sunrise dinâmico (resolve Bug 001 noite prematura)
--  Confirmado logs produção: IsNight: false às 15:03h, Sunset 20:24h
+-  MoSCoW definido ([docs/scope/moscow.md](docs/scope/moscow.md))
+-  ADR-001: Firebase Functions vs Lambda
+-  ADR-002: Jimp vs OpenCV para análise RGB
+-  ADR-003: Firestore vs PostgreSQL
+-  ADR-004: Regras Fusão vs Machine Learning
+-  Bug produção identificado e corrigido (threshold Ponta Delgada 0.99→0.55)
+-  C4 Level 1: Diagrama contexto (ecossistema AzoresAI)
+-  C4 Level 2: Diagrama containers (arquitetura interna backend)
+-  Schema Firestore: Diagrama collection + document structure
+-  Pasta validation: Bug noite prematura documentado (caso 001 + 002)
+-  Polimento ADRs 001-004 (formatação, datas, nº casos)
+-  Fix produção: Furnas webcam volta de manutenção
+-  **SunCalc implementado:** sunset/sunrise dinâmico resolve Bug 001 noite prematura
+-  **Confirmado logs produção:** IsNight: false às 15:03h, Sunset 20:24h
+
 **Próximas etapas (Semana 7):**
 - Confidence score (Should Have MoSCoW)
 - Preparação relatório intercalar (semana 8)
-
 
 ---
 
@@ -39,7 +51,7 @@ _Sistema v1 funcional em produção. Projeto académico valida e melhora v1→v2
 **Must Have (v2 melhorias):**
 - Sistema fusão multimodal validado cientificamente (webcam RGB + meteorologia OWM)
 - Classificador RGB via análise de histogramas de cor e contraste local
-- Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
+- ✅ Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
 - Persistência Firestore com execução periódica otimizada
 
 Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
@@ -75,7 +87,7 @@ azoresai-projeto-lei/
 
 ## Como Instalar e Correr
 
-_Implementação inicia semana 6. Instruções serão atualizadas quando houver código._
+_Implementação em curso (semana 6+). Instruções serão atualizadas quando houver código estável._
 
 **Pré-requisitos planeados:**
 - Node.js 20+
@@ -106,6 +118,7 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Firebase Functions Docs](https://firebase.google.com/docs/functions)
 - [Jimp Documentation](https://github.com/jimp-dev/jimp)
+- [SunCalc](https://github.com/mourner/suncalc) - Cálculo sunset/sunrise dinâmico
 
 ### Ferramentas de IA Utilizadas
 
