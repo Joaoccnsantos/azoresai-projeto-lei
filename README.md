@@ -11,14 +11,14 @@
 
 ## Estado actual
 
-🟢 **Verde** — A correr conforme planeado. 
+🟢 **Verde** — A correr conforme planeado.
 
 ---
 
 ## Progresso Actual
 
-**Semana 3 (31 mar - 6 abr)** — Documentação arquitetura 
-**Próxima fase:** Implementação (inicia semana 5)
+**Semana 5 (14–20 abr)** — Polimento documentação + fix produção  
+**Próxima fase:** Implementação (inicia semana 6)
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
@@ -31,11 +31,14 @@
 -  Bug produção identificado e corrigido (threshold Ponta Delgada 0.99→0.55)
 -  C4 Level 1: Diagrama contexto (ecossistema AzoresAI)
 -  C4 Level 2: Diagrama containers (arquitetura interna backend)
--  Changelog semanas 1-3 atualizado
+-  Schema Firestore: Diagrama collection + document structure
+-  Pasta validation: Bug noite prematura documentado (caso 001 + 002)
+-  Polimento ADRs 001-004 (formatação, datas, nº casos)
+-  Fix produção: Furnas webcam volta de manutenção
 
-**Próximas etapas (Semana 4):**
-- Schema Firestore (diagrama visual collection + documento)
-- Polimento documentação (opcional)
+**Próximas etapas (Semana 6):**
+- Implementação sunset dinâmico (SunCalc)
+- Preparação defesa oral (perguntas difíceis)
 
 ---
 
@@ -54,6 +57,7 @@ Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
 ---
 
 ## Estrutura do Repositório
+
 ```
 azoresai-projeto-lei/
 ├── docs/
@@ -62,19 +66,26 @@ azoresai-projeto-lei/
 │   │   ├── adr-002-jimp-vs-opencv.md
 │   │   ├── adr-003-firestore-vs-postgresql.md
 │   │   └── adr-004-regras-vs-ml.md
-│   ├── diagrams/            # Diagramas C4
+│   ├── defesa-oral/         # Preparação defesa
+│   ├── diagrams/            # Diagramas C4 + Schema
 │   │   ├── c4-context.png
-│   │   └── c4-containers.png
-│   └── scope/               # MoSCoW, changelog, requisitos
+│   │   ├── c4-containers.png
+│   │   └── firestore-schema.png
+│   ├── validation/          # Casos validação sistema
+│   │   ├── NOTAS.md
+│   │   └── bug-noite-prematura.png
+│   └── scope/               # MoSCoW, changelog
 │       ├── moscow.md
 │       └── changelog.md
-├── functions/               # Firebase Functions (sem. 5+)
+├── functions/               # Firebase Functions (sem. 6+)
 └── README.md
 ```
 
+---
+
 ## Como Instalar e Correr
 
-_Implementação inicia semana 5 (14-25 abril). Instruções serão atualizadas quando houver código._
+_Implementação inicia semana 6. Instruções serão atualizadas quando houver código._
 
 **Pré-requisitos planeados:**
 - Node.js 20+
@@ -110,8 +121,8 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 | Ferramenta | Para que foi usada |
 |-----------|-------------------|
-| Claude    | Estruturação documentação técnica, exploração alternativas arquitetura, escrita ADRs |
+| Claude (Anthropic) | Estruturação documentação técnica, exploração alternativas arquitetura, escrita ADRs |
 
 ---
 
-*Última actualização: 20 de abril 2026 · Semana 3*
+*Última actualização: 20 abril 2026 · Semana 5*
