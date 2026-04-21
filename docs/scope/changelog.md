@@ -84,10 +84,17 @@
 ## Sem. 6 · 22–27 abr
 
 **Feito:**
--  Implementado SunCalc sunset dinâmico (resolve bug noite prematura)
--  Confirmado via logs: IsNight: false às 15:03h, Sunset 20:24h 
-**Bloqueou:**  
+-  Implementado SunCalc sunset dinâmico (resolve bug noite prematura - Bug 001)
+-  Confirmado via logs produção: Sunrise 07:00h, Sunset 20:24h, IsNight: false às 15:03h
+-  Fix fetchWithTimeout em falta após refactoring SunCalc
+-  NOTAS.md validação atualizado com Fix 001
+
+**Bloqueou:**
+- Nada
+
 **Próxima semana:**
+- Implementação confidence score (Should Have MoSCoW)
+- Relatório intercalar Cap 1-2 (semana 8)
 
 ---
 
