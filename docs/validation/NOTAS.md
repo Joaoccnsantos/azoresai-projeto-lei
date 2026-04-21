@@ -56,13 +56,13 @@ return (hora >= 21 || hora <= 6);  // ERRADO! Igual todo o ano
 **Depois (dinâmico):**
 ```javascript
 const times = SunCalc.getTimes(now, 37.7412, -25.6756);
-// Sunset hoje: 20:24h → IsNight: false às 15:03h ✅
+// Sunset hoje: 20:24h → IsNight: false às 15:03h 
 ```
 
 **Confirmação logs produção:**
 - Sunrise: 07:00:51
 - Sunset: 20:24:14  
-- IsNight: false às 15:03h ✅
+- IsNight: false às 15:03h 
 
 **Deploy:** 21/04/2026 ~15:00h  
-**Estado:** Bug 001 RESOLVIDO ✅
+**Estado:** Bug 001 RESOLVIDO 
