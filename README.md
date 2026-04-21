@@ -51,7 +51,7 @@ _Sistema v1 funcional em produção. Projeto académico valida e melhora v1→v2
 **Must Have (v2 melhorias):**
 - Sistema fusão multimodal validado cientificamente (webcam RGB + meteorologia OWM)
 - Classificador RGB via análise de histogramas de cor e contraste local
-- ✅ Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
+- Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
 - Persistência Firestore com execução periódica otimizada
 
 Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
