@@ -3,7 +3,7 @@
 **Autor:** João Santos · 1802935  
 **Orientador:** Pedro Pestana  
 **UC:** Projecto de Engenharia Informática · Universidade Aberta · 2025/26  
-**Data:** abril 2026
+**Data:** 23 de Abril 2026
 
 ---
 
