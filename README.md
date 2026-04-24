@@ -128,4 +128,4 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 ---
 
-*Última actualização: 21 abril 2026 · Semana 6*
+*Última actualização: 24 abril 2026 · Semana 6*
