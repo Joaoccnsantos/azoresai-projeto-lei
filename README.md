@@ -39,8 +39,8 @@
 -  **Confirmado logs produção:** IsNight: false às 15:03h, Sunset 20:24h
 
 **Próximas etapas (Semana 7):**
+- Relatório intercalar: Cap 1 + Cap 2 escritos → entrega 29 abril
 - Confidence score (Should Have MoSCoW)
-- Preparação relatório intercalar (semana 8)
 
 ---
 
