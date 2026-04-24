@@ -68,11 +68,13 @@ azoresai-projeto-lei/
 │   │   ├── adr-002-jimp-vs-opencv.md
 │   │   ├── adr-003-firestore-vs-postgresql.md
 │   │   └── adr-004-regras-vs-ml.md
-│   ├── defesa-oral/         # Preparação defesa
 │   ├── diagrams/            # Diagramas C4 + Schema
 │   │   ├── c4-context.png
 │   │   ├── c4-containers.png
 │   │   └── firestore-schema.png
+│   ├── report/              # Relatório intercalar
+│   │   ├── cap1-introducao.md
+│   │   └── cap2-desenho.md
 │   ├── validation/          # Casos validação sistema
 │   │   ├── NOTAS.md
 │   │   └── bug-noite-prematura.png
