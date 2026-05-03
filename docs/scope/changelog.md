@@ -98,11 +98,20 @@
 
 ---
 
-## Sem. 7 · 28 abr–2 mai · DEMO INTERNA
+## Sem. 7 · 28 abr–2 mai
 
-**Feito:**  
-**Bloqueou:**  
+**Feito:**
+-  Relatório intercalar entregue (Cap 1, 2, 3)
+-  Fix app Flutter: remove threshold hora fixa (confia SunCalc backend)
+-  Fix sugestões indoor: remove livros como sugestão de dia de chuva
+-  Edge-to-edge Android 15 (Android Vitals)
+-  Build 1.0.10 submetida Play Store
+
+**Bloqueou:**
+- Nada
+
 **Próxima semana:**
+- Confidence score (Should Have)
 
 ---
 
