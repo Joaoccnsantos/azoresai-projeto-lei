@@ -17,30 +17,34 @@
 
 ## Progresso Actual
 
-**Semana 6 (21–27 abr)** — Implementação sunset dinâmico  
-**Próxima fase:** Confidence score + Relatório intercalar (semana 8)
+**Semana 7 (28 abr–5 mai)** — Relatório intercalar entregue + fixes app  
+**Próxima fase:** Confidence score (Should Have MoSCoW)
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
 **Completado:**
--  MoSCoW definido ([docs/scope/moscow.md](docs/scope/moscow.md))
--  ADR-001: Firebase Functions vs Lambda
--  ADR-002: Jimp vs OpenCV para análise RGB
--  ADR-003: Firestore vs PostgreSQL
--  ADR-004: Regras Fusão vs Machine Learning
--  Bug produção identificado e corrigido (threshold Ponta Delgada 0.99→0.55)
--  C4 Level 1: Diagrama contexto (ecossistema AzoresAI)
--  C4 Level 2: Diagrama containers (arquitetura interna backend)
--  Schema Firestore: Diagrama collection + document structure
--  Pasta validation: Bug noite prematura documentado (caso 001 + 002)
--  Polimento ADRs 001-004 (formatação, datas, nº casos)
--  Fix produção: Furnas webcam volta de manutenção
--  **SunCalc implementado:** sunset/sunrise dinâmico resolve Bug 001 noite prematura
--  **Confirmado logs produção:** IsNight: false às 15:03h, Sunset 20:24h
+- ✅ MoSCoW definido ([docs/scope/moscow.md](docs/scope/moscow.md))
+- ✅ ADR-001: Firebase Functions vs Lambda
+- ✅ ADR-002: Jimp vs OpenCV para análise RGB
+- ✅ ADR-003: Firestore vs PostgreSQL
+- ✅ ADR-004: Regras Fusão vs Machine Learning
+- ✅ Bug produção identificado e corrigido (threshold Ponta Delgada 0.99→0.55)
+- ✅ C4 Level 1: Diagrama contexto (ecossistema AzoresAI)
+- ✅ C4 Level 2: Diagrama containers (arquitetura interna backend)
+- ✅ Schema Firestore: Diagrama collection + document structure
+- ✅ Pasta validation: Bug noite prematura documentado (caso 001 + 002)
+- ✅ Polimento ADRs 001-004 (formatação, datas, nº casos)
+- ✅ SunCalc implementado: sunset/sunrise dinâmico (resolve Bug 001 noite prematura)
+- ✅ Confirmado logs produção: IsNight: false às 15:03h, Sunset 20:24h
+- ✅ **Relatório intercalar entregue** (Cap 1, 2, 3 — 29 abril 2026)
+- ✅ Fix app Flutter: remove threshold hora fixa (confia 100% SunCalc backend)
+- ✅ Fix sugestões indoor: remove livros como sugestão de dia de chuva
+- ✅ Edge-to-edge Android 15 (resolve Android Vitals warning)
+- ✅ Build 1.0.10 submetida Play Store
 
-**Próximas etapas (Semana 7):**
-- Relatório intercalar: Cap 1 + Cap 2 escritos → entrega 29 abril
+**Próximas etapas (Semana 8):**
 - Confidence score (Should Have MoSCoW)
+- Aprovação relatório intercalar (professor)
 
 ---
 
@@ -51,7 +55,7 @@ _Sistema v1 funcional em produção. Projeto académico valida e melhora v1→v2
 **Must Have (v2 melhorias):**
 - Sistema fusão multimodal validado cientificamente (webcam RGB + meteorologia OWM)
 - Classificador RGB via análise de histogramas de cor e contraste local
-- Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
+- ✅ Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
 - Persistência Firestore com execução periódica otimizada
 
 Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
@@ -74,7 +78,8 @@ azoresai-projeto-lei/
 │   │   └── firestore-schema.png
 │   ├── report/              # Relatório intercalar
 │   │   ├── cap1-introducao.md
-│   │   └── cap2-desenho.md
+│   │   ├── cap2-desenho.md
+│   │   └── cap3-implementacao.md
 │   ├── validation/          # Casos validação sistema
 │   │   ├── NOTAS.md
 │   │   └── bug-noite-prematura.png
@@ -89,7 +94,7 @@ azoresai-projeto-lei/
 
 ## Como Instalar e Correr
 
-_Implementação em curso (semana 6+). Instruções serão atualizadas quando houver código estável._
+_Implementação em curso. Instruções serão atualizadas quando houver código estável._
 
 **Pré-requisitos planeados:**
 - Node.js 20+
@@ -127,7 +132,8 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 | Ferramenta | Para que foi usada |
 |-----------|-------------------|
 | Claude (Anthropic) | Estruturação documentação técnica, exploração alternativas arquitetura, escrita ADRs |
+| Gemini 2.5 Flash (Google) | Revisão arquitetural secundária, validação diagramas C4, sugestões melhoria ADRs |
 
 ---
 
-*Última actualização: 24 abril 2026 · Semana 6*
+*Última actualização: 5 maio 2026 · Semana 7*
