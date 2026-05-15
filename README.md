@@ -17,8 +17,8 @@
 
 ## Progresso Actual
 
-**Semana 7 (28 abr–5 mai)** — Relatório intercalar entregue + fixes app  
-**Próxima fase:** Confidence score (Should Have MoSCoW)
+**Semana 9 (12–16 mai)** — Confidence score implementado  
+**Próxima fase:** Validação casos reais (semana 13)
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
@@ -36,15 +36,16 @@
 - ✅ Polimento ADRs 001-004 (formatação, datas, nº casos)
 - ✅ SunCalc implementado: sunset/sunrise dinâmico (resolve Bug 001 noite prematura)
 - ✅ Confirmado logs produção: IsNight: false às 15:03h, Sunset 20:24h
-- ✅ **Relatório intercalar entregue** (Cap 1, 2, 3 — 29 abril 2026)
+- ✅ Relatório intercalar entregue (Cap 1, 2, 3 — 29 abril 2026)
 - ✅ Fix app Flutter: remove threshold hora fixa (confia 100% SunCalc backend)
 - ✅ Fix sugestões indoor: remove livros como sugestão de dia de chuva
 - ✅ Edge-to-edge Android 15 (resolve Android Vitals warning)
-- ✅ Build 1.0.10 submetida Play Store
+- ✅ Versão 1.0.10 submetida App Store + Play Store
+- ✅ **Confidence score implementado:** score 0-100% por classificação fusão multimodal
 
-**Próximas etapas (Semana 8):**
-- Confidence score (Should Have MoSCoW)
-- Aprovação relatório intercalar (professor)
+**Próximas etapas (Semana 10-12):**
+- Implementação restante Should Have MoSCoW
+- Preparação casos validação (semana 13)
 
 ---
 
@@ -136,4 +137,4 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 ---
 
-*Última actualização: 3 maio 2026 · Semana 7*
+*Última actualização: 15 maio 2026 · Semana 9*
