@@ -117,23 +117,37 @@
 
 ## Sem. 8 · 5–6 mai · INTERCALAR
 
-**Feito:**  
-**Bloqueou:**  
+**Feito:** 
+- Relatório intercalar aprovado pelo orientador
+- Versão 1.0.10 submetida App Store
+- Versão 1.0.10 submetida Play Store
+
+**Bloqueou:** 
+-Nada
+
 **Próxima semana:**
+- Confidence score (Should Have MoSCoW)
 
 ---
 
 ## Sem. 9 · 7–9 mai
 
 **Feito:**  
-**Bloqueou:**  
-**Próxima semana:**
+- Confidence score implementado no backend (calculateConfidence 0-100%)
+- Confirmado logs produção: cloudy=80%, fog montanha=75% (webcam detecta, OWM não capta)
+- Campo confidence persistido no Firestore por localização
 
+**Bloqueou:**  
+-Nada
+
+**Próxima semana:**
+- Implementação Should Have restante
 ---
 
 ## Sem. 10 · 12–16 mai
 
 **Feito:**  
+
 **Bloqueou:**  
 **Próxima semana:**
 
