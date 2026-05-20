@@ -8,28 +8,34 @@
 
 ## Sem. 1 · 17–21 mar
 
-**Feito:** Proposta projeto redigida: sinopse, MVP com critérios aceitação preliminares, calendário, stack Firebase/Firestore. Submissão 25 março.
+**Feito:** 
+Proposta projeto redigida: sinopse, MVP com critérios aceitação preliminares, calendário, stack Firebase/Firestore. Submissão 25 março.
 
-**Bloqueou:** Nada
+**Bloqueou:** 
+-Nada
 
-**Próxima semana:** Incorporar feedback professor. Iniciar documentação arquitetura (MoSCoW, ADRs).
+**Próxima semana:** 
+-Incorporar feedback professor. Iniciar documentação arquitetura (MoSCoW, ADRs).
 
 ---
 
 ## Sem. 2 · 24–28 mar
 
-**Feito:** Proposta aprovada com feedback (critérios aceitação formato Given-When-Then para relatórios futuros). MoSCoW completo (Must/Should/Could/Won't). ADR-001 Firebase Functions vs Lambda com análise observabilidade. Estrutura repositório GitHub organizada. README atualizado.
+**Feito:** 
+Proposta aprovada com feedback (critérios aceitação formato Given-When-Then para relatórios futuros). MoSCoW completo (Must/Should/Could/Won't). ADR-001 Firebase Functions vs Lambda com análise observabilidade. Estrutura repositório GitHub organizada. README atualizado.
 
-**Bloqueou:** Nada
+**Bloqueou:** 
+-Nada
 
-**Próxima semana:** ADR-002 Jimp vs OpenCV. ADR-003 Firestore vs PostgreSQL. ADR-004 Regras vs ML. C4 Level 1 e 2.
+**Próxima semana:** 
+-ADR-002 Jimp vs OpenCV. ADR-003 Firestore vs PostgreSQL. ADR-004 Regras vs ML. C4 Level 1 e 2.
 
 ---
 
 ## Sem. 3 · 31 mar–6 abr
 
 **Feito:**
--  Bug produção corrigido: Threshold `clearThresh` Ponta Delgada estava em 0.99, causando classificação "nublado" em dias clear com nuvens altas. Ajustado para 0.55 (55% pixels azuis). Deploy 30/03 23:45h, validado 31/03 09:20h - funcionando corretamente. Documentado ADR-002 secção "Lições Produção".
+-  Bug produção corrigido: Threshold `clearThresh` Ponta Delgada estava em 0.99, causando classificação "nublado" em dias clear com nuvens altas. Ajustado para 0.55 (55% pixels azuis),funcionando corretamente. Documentado ADR-002 secção "Lições Produção".
 -  ADR-002: Jimp vs OpenCV completo (incluindo bug fix threshold + ambiguidade noite vs offline)
 -  ADR-003: Firestore vs PostgreSQL completo (document model, tier gratuito, comparação quantitativa)
 -  ADR-004: Regras Fusão vs ML completo (decisão consciente Won't Have ML fundamentada)
