@@ -41,12 +41,12 @@
 - ✅ Fix sugestões indoor: remove livros como sugestão de dia de chuva
 - ✅ Edge-to-edge Android 15 (resolve Android Vitals warning)
 - ✅ Versão 1.0.10 submetida App Store + Play Store
-- ✅ **Confidence score implementado:** score 0-100% por classificação fusão multimodal
-- ✅ **Cache degradação graciosa:** fallback automático 24h quando OWM falha (`degraded`, `cache_age_minutes`)
+- ✅ Confidence score implementado: score 0-100% por classificação fusão multimodal
+- ✅ **Cache degradação graciosa:** fallback automático 24h quando OWM falha
 - ✅ **Should Have MoSCoW 100% completo**
 
-**Próximas etapas (Semana 10-12):**
-- Implementação restante Should Have MoSCoW
+**Próximas etapas (Semana 12):**
+- +2 webcams (Ribeira Grande + Vila Franca) — Could Have MoSCoW
 - Preparação casos validação (semana 13)
 
 ---
@@ -56,10 +56,10 @@
 _Sistema v1 funcional em produção. Projeto académico valida e melhora v1→v2._
 
 **Must Have (v2 melhorias):**
-- Sistema fusão multimodal validado cientificamente (webcam RGB + meteorologia OWM)
-- Classificador RGB via análise de histogramas de cor e contraste local
+- ✅ Sistema fusão multimodal validado cientificamente (webcam RGB + meteorologia OWM)
+- ✅ Classificador RGB via análise de histogramas de cor e contraste local
 - ✅ Sunset/sunrise dinâmico (evita ambiguidade noite vs offline)
-- Persistência Firestore com execução periódica otimizada
+- ✅ Persistência Firestore com execução periódica otimizada
 
 Ver [MoSCoW](docs/scope/moscow.md) para detalhes completos.
 
