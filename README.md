@@ -17,8 +17,8 @@
 
 ## Progresso Actual
 
-**Semana 9 (12–16 mai)** — Confidence score implementado  
-**Próxima fase:** Validação casos reais (semana 13)
+**Semana 11 (19–23 mai)** — Should Have MoSCoW 100% completo  
+**Próxima fase:** +2 webcams (Could Have) + Validação semana 13
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
@@ -42,6 +42,8 @@
 - ✅ Edge-to-edge Android 15 (resolve Android Vitals warning)
 - ✅ Versão 1.0.10 submetida App Store + Play Store
 - ✅ **Confidence score implementado:** score 0-100% por classificação fusão multimodal
+- ✅ **Cache degradação graciosa:** fallback automático 24h quando OWM falha (`degraded`, `cache_age_minutes`)
+- ✅ **Should Have MoSCoW 100% completo**
 
 **Próximas etapas (Semana 10-12):**
 - Implementação restante Should Have MoSCoW
@@ -137,4 +139,4 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 ---
 
-*Última actualização: 15 maio 2026 · Semana 9*
+*Última actualização: 20 maio 2026 · Semana 11*
