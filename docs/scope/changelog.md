@@ -133,6 +133,7 @@
 ## Sem. 9 · 7–9 mai
 
 **Feito:**  
+
 - Confidence score implementado no backend (calculateConfidence 0-100%)
 - Confirmado logs produção: cloudy=80%, fog montanha=75% (webcam detecta, OWM não capta)
 - Campo confidence persistido no Firestore por localização
@@ -147,6 +148,7 @@
 ## Sem. 10 · 12–16 mai
 
 **Feito:**  
+
  -Confidence score validado em produção (logs 15 maio: CONF=80% cloudy, CONF=75% fog montanha)
  -Versão 1.0.10 aprovada App Store e Play Store
 
