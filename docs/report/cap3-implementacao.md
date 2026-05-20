@@ -35,8 +35,6 @@ function classifySkyForWebcam(img, name, isMountain, skyPerc, clearThresh) {
   }
 
   const blueRatio = blue / total;
-  const neutralRatio = neutral / total;
-  const avgContrast = contrastSum / total;
   const avgBrightness = brightnessSum / total;
   // ...
 }
@@ -73,19 +71,77 @@ function checkIsNight() {
   const LON = -25.6756;
   const now = new Date();
   const times = SunCalc.getTimes(now, LAT, LON);
-
   const sunriseEnd = new Date(times.sunrise.getTime() + 30 * 60 * 1000);
   const sunsetStart = new Date(times.sunset.getTime() - 30 * 60 * 1000);
-
   const isNight = now < sunriseEnd || now > sunsetStart;
-
   console.log(`[SUNCALC] Sunrise: ${times.sunrise.toLocaleTimeString()} | Sunset: ${times.sunset.toLocaleTimeString()} | IsNight: ${isNight}`);
-
   return isNight;
 }
 ```
 
 A correção foi validada em produção a 21 de abril de 2026: logs confirmam `IsNight: false` às 15:03h, com Sunrise 07:00h e Sunset 20:24h. O bug original foi documentado no caso 001 da pasta `docs/validation/` — sistema classificava "noite" às 18:16h quando o pôr do sol estava agendado para as 20:15h.
+
+### 3.2.4 Confidence Score (Melhoria v2)
+
+O sistema calcula um score de confiança (0-100%) para cada classificação, quantificando o grau de concordância entre as fontes disponíveis. O score é persistido no Firestore e utilizado na fase de validação (Capítulo 4) para correlacionar confiança com accuracy:
+
+```javascript
+function calculateConfidence(owmState, camState, finalSkyState, isMountain) {
+  // NOITE: SunCalc é preciso → alta confiança
+  if (finalSkyState === 'night') return 90;
+  // FOG: ambas as fontes concordam → muito alta confiança
+  if (owmState === 'fog' && camState === 'fog') return 95;
+  // FOG: só uma fonte detectou
+  if (owmState === 'fog' && camState !== 'fog') return 80;
+  if (camState === 'fog' && owmState !== 'fog') return 75;
+  // WEBCAM OFFLINE: só OWM disponível → baixa confiança
+  if (!camState || camState === 'offline') return 50;
+  // MONTANHA: ambas concordam em clear → boa confiança
+  if (isMountain && camState === 'clear' && owmState === 'clear') return 85;
+  // MONTANHA: discordância → confiança média
+  if (isMountain && camState === 'clear' && owmState !== 'clear') return 60;
+  // COSTA: confia na webcam → boa confiança
+  if (!isMountain && camState === 'clear') return 82;
+  // AMBAS CONCORDAM
+  if (camState === owmState) return 80;
+  return 60;
+}
+```
+
+Validado em produção a 15 de maio de 2026: classificações `cloudy` com ambas as fontes em concordância = **80%**, `fog` detetado apenas pela webcam (OWM não capta nevoeiro localizado em montanha) = **75%**.
+
+### 3.2.5 Cache com Degradação Graciosa (Melhoria v2)
+
+Quando o OWM falha, o sistema usa a última classificação válida (máximo 24 horas), garantindo disponibilidade contínua do serviço. Após 24 horas sem dados frescos, o sistema marca a localização como offline:
+
+```javascript
+// Verifica idade da cache
+const cacheAgeMinutes = lastUpdated
+  ? Math.floor((Date.now() - lastUpdated.getTime()) / 60000)
+  : null;
+const cacheValid = cacheAgeMinutes !== null && cacheAgeMinutes < 1440; // 24h
+
+// OWM falhou → fallback para cache
+if (cacheValid) {
+  batch.set(..., {
+    skyState: cachedState,
+    degraded: true,
+    cache_age_minutes: cacheAgeMinutes
+  }, { merge: true });
+} else {
+  // Cache expirada → offline
+  batch.set(..., {
+    skyState: 'offline',
+    degraded: true,
+    cache_age_minutes: cacheAgeMinutes ?? -1
+  }, { merge: true });
+}
+```
+
+**Fluxo de degradação:**
+- OWM disponível → classificação normal (`degraded: false`, `cache_age_minutes: 0`)
+- OWM falha + cache < 24h → usa cache (`degraded: true`, `cache_age_minutes: X`)
+- OWM falha + cache > 24h → marca offline (`degraded: true`)
 
 ---
 
@@ -96,7 +152,6 @@ O sistema implementa um mecanismo de override manual para webcams em manutençã
 ```javascript
 // Lista de webcams offline temporariamente
 const TEMP_OFFLINE_WEBCAMS = []; // Vazio = todas ativas
-
 // Exemplo de uso: ['Furnas'] durante manutenção da webcam
 ```
 
@@ -146,7 +201,7 @@ O sistema segue Conventional Commits para versionamento semântico:
 | 1.0.7 | mar 2026 | Sistema v1 inicial em produção |
 | 1.0.8 | mar 2026 | Fix threshold clearThresh Ponta Delgada 0.99→0.55 |
 | 1.0.9 | abr 2026 | Fix abertura URLs externos Android (AndroidManifest.xml) |
-| 1.0.10 | abr 2026 | SunCalc sunset dinâmico + edge-to-edge Android 15 |
+| 1.0.10 | mai 2026 | SunCalc + edge-to-edge + confidence score + cache degradação graciosa |
 
 O deploy do backend é realizado via Firebase CLI:
 
