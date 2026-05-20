@@ -4,13 +4,6 @@
 <!-- Formato fixo: três linhas por entrada. Não elaborar além do necessário. -->
 <!-- O changelog é verificado nas três entregas formais. -->
 
----
-
-# Changelog
-
-<!-- Uma entrada por semana, até domingo à noite. -->
-<!-- Formato fixo: três linhas por entrada. Não elaborar além do necessário. -->
-<!-- O changelog é verificado nas três entregas formais. -->
 
 ---
 
