@@ -147,25 +147,46 @@
 ## Sem. 10 · 12–16 mai
 
 **Feito:**  
+ -Confidence score validado em produção (logs 15 maio: CONF=80% cloudy, CONF=75% fog montanha)
+ -Versão 1.0.10 aprovada App Store e Play Store
 
 **Bloqueou:**  
+-Nada
+
 **Próxima semana:**
+Cache degradação graciosa (Should Have MoSCoW)
 
 ---
 
 ## Sem. 11 · 19–23 mai
 
 **Feito:**  
+ -Cache degradação graciosa implementada (Should Have MoSCoW)
+ -Fallback automático para cache 24h quando OWM falha
+ -Campos degraded e cache_age_minutes persistidos no Firestore
+ -Confirmado logs: Nordeste CAM=offline → OWM fallback → CONF=50% ✅
+ -Should Have MoSCoW 100% completo
+
 **Bloqueou:**  
+-Nada
+
 **Próxima semana:**
++2 webcams (Ribeira Grande + Vila Franca) — Could Have MoSCoW
+
+
 
 ---
 
 ## Sem. 12 · 26–30 mai
 
 **Feito:**  
+
+
 **Bloqueou:**  
+
+
 **Próxima semana:**
+
 
 ---
 
