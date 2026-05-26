@@ -159,12 +159,12 @@
 ## Sem. 12 · 26–30 mai
 
 **Feito:**
-✅ +2 webcams adicionadas: Ribeira Grande (SMGRBG02) + Vila Franca (SMGADL01)
-✅ Histórico 24h implementado: subcollection history por localização no Firestore
-✅ Confirmado Firestore: história a guardar entradas a cada 15 minutos ✅
-✅ Plano validação criado (docs/validation/plano-validacao.md) — 12 casos semana 13
-✅ Could Have MoSCoW 100% completo
-✅ Segurança: API key comprometida revogada, nova key criada e restrita, git history limpo
+- ✅ +2 webcams adicionadas: Ribeira Grande (SMGRBG02) + Vila Franca (SMGADL01)
+- ✅ Histórico 24h implementado: subcollection history por localização no Firestore
+- ✅ Confirmado Firestore: história a guardar entradas a cada 15 minutos ✅
+- ✅ Plano validação criado (docs/validation/plano-validacao.md) — 12 casos semana 13
+- ✅ Could Have MoSCoW 100% completo
+- ✅ Segurança: API key comprometida revogada, nova key criada e restrita, git history limpo
 
 **Bloqueou:** API key Gemini comprometida (resolvido)
 
