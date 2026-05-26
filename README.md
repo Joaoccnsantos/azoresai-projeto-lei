@@ -17,8 +17,8 @@
 
 ## Progresso Actual
 
-**Semana 11 (19–23 mai)** — Should Have MoSCoW 100% completo  
-**Próxima fase:** +2 webcams (Could Have) + Validação semana 13
+**Semana 12 (26–30 mai)** — Could Have MoSCoW completo  
+**Próxima fase:** Validação 10-12 casos reais (semana 13)
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
@@ -42,12 +42,16 @@
 - ✅ Edge-to-edge Android 15 (resolve Android Vitals warning)
 - ✅ Versão 1.0.10 submetida App Store + Play Store
 - ✅ Confidence score implementado: score 0-100% por classificação fusão multimodal
-- ✅ **Cache degradação graciosa:** fallback automático 24h quando OWM falha
-- ✅ **Should Have MoSCoW 100% completo**
+- ✅ Cache degradação graciosa: fallback automático 24h quando OWM falha
+- ✅ Should Have MoSCoW 100% completo
+- ✅ **+2 webcams:** Ribeira Grande (SMGRBG02) + Vila Franca (SMGADL01)
+- ✅ **Histórico 24h:** subcollection `history` por localização no Firestore
+- ✅ **Could Have MoSCoW 100% completo**
+- ✅ Plano validação 10-12 casos criado (`docs/validation/plano-validacao.md`)
 
-**Próximas etapas (Semana 12):**
-- +2 webcams (Ribeira Grande + Vila Franca) — Could Have MoSCoW
-- Preparação casos validação (semana 13)
+**Próximas etapas (Semana 13):**
+- Validação 10-12 casos reais (SpotAzores + app AzoresAI)
+- Cálculo métricas accuracy/precision/recall
 
 ---
 
@@ -85,6 +89,7 @@ azoresai-projeto-lei/
 │   │   └── cap3-implementacao.md
 │   ├── validation/          # Casos validação sistema
 │   │   ├── NOTAS.md
+│   │   ├── plano-validacao.md
 │   │   └── bug-noite-prematura.png
 │   └── scope/               # MoSCoW, changelog
 │       ├── moscow.md
@@ -139,4 +144,4 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 ---
 
-*Última actualização: 20 maio 2026 · Semana 11*
+*Última actualização: 26 maio 2026 · Semana 12*
