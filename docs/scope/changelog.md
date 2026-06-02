@@ -175,8 +175,14 @@
 ## Sem. 13 · 2–6 jun
 
 **Feito:**
-**Bloqueou:**
-**Próxima semana:**
+✅ Validação sessão 1: 8 casos reais (SpotAzores + Firestore), 75% accuracy (6/8)
+✅ Documento análise validação criado (docs/validation/validacao_semana13_sessao1.docx)
+✅ 2 erros identificados com causa raiz: Mosteiros (câmara > OWM incorreto) + Furnas (OWM > câmara incorreto)
+✅ Correlação confidence score vs resultado confirmada: acertos 81% vs erros 55%
+⏳ Sessão 2 validação pendente (2-4 casos, condições diferentes)
+
+**Bloqueou:** Nada
+**Próxima semana:** Sessão 2 validação + fix fusão Furnas + início relatório final
 
 ---
 
