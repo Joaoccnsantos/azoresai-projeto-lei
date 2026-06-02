@@ -49,12 +49,12 @@
 - ✅ **Could Have MoSCoW 100% completo**
 - ✅ Plano validação 10-12 casos criado (`docs/validation/plano-validacao.md`)
 
-**Próximas etapas (Semana 13):**
-- Validação 10-12 casos reais (SpotAzores + app AzoresAI)
-- Cálculo métricas accuracy/precision/recall
+**Próximas etapas (Semana 13–14):**
+- ⏳ Sessão 2 validação (condições diferentes, +2–4 casos)
+- ⏳ Fix fusão multimodal: calibração pesos Furnas + Mosteiros
+- ⏳ Cálculo métricas finais accuracy/precision/recall
 
 ---
-
 ## MVP Planeado
 
 _Sistema v1 funcional em produção. Projeto académico valida e melhora v1→v2._
