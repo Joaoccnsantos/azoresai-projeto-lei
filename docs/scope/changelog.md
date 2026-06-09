@@ -190,8 +190,15 @@
 ## Sem. 14 · 9–13 jun
 
 **Feito:**
-**Bloqueou:**
-**Próxima semana:**
+- ✅ Cap 4 — Validação escrito (`docs/report/cap4-validacao.md`)
+- ✅ Cap 5 — Conclusão escrito (`docs/report/cap5-conclusao.md`)
+- ✅ README e changelog atualizados (semana 13 + 14)
+- ✅ Screenshots sessão 1 organizados e commitados (`docs/validation/screenshots/`)
+- ⏳ Sessão 2 validação pendente (condições diferentes, +2–4 casos)
+
+**Bloqueou:** Nada
+
+**Próxima semana:** Fevisão relatório final
 
 ---
 
