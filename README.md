@@ -17,8 +17,8 @@
 
 ## Progresso Actual
 
-**Semana 12 (26–30 mai)** — Could Have MoSCoW completo  
-**Próxima fase:** Validação 10-12 casos reais (semana 13)
+**Semana 14 (9–13 jun)** — Relatório final em curso  
+**Próxima fase:** Preparação defesa (semana 15)
 
 **Sistema v1 em produção:** App AzoresAI (App Store/Play Store) já funcional com Jimp + OWM. Projeto académico documenta e melhora sistema existente.
 
@@ -48,13 +48,17 @@
 - ✅ **Histórico 24h:** subcollection `history` por localização no Firestore
 - ✅ **Could Have MoSCoW 100% completo**
 - ✅ Plano validação 10-12 casos criado (`docs/validation/plano-validacao.md`)
+- ✅ **Validação sessão 1:** 8 casos reais, accuracy 75% (6/8), confidence score correlacionado
+- ✅ **Documento análise validação:** `docs/validation/validacao_semana13_sessao1.docx`
+- ✅ **Cap 4 — Validação:** escrito (`docs/report/cap4-validacao.md`)
+- ✅ **Cap 5 — Conclusão:** escrito (`docs/report/cap5-conclusao.md`)
 
-**Próximas etapas (Semana 13–14):**
+**Próximas etapas (Semana 14–15):**
 - ⏳ Sessão 2 validação (condições diferentes, +2–4 casos)
-- ⏳ Fix fusão multimodal: calibração pesos Furnas + Mosteiros
-- ⏳ Cálculo métricas finais accuracy/precision/recall
+- ⏳ Revisão e entrega relatório final completo
 
 ---
+
 ## MVP Planeado
 
 _Sistema v1 funcional em produção. Projeto académico valida e melhora v1→v2._
@@ -83,14 +87,18 @@ azoresai-projeto-lei/
 │   │   ├── c4-context.png
 │   │   ├── c4-containers.png
 │   │   └── firestore-schema.png
-│   ├── report/              # Relatório intercalar
+│   ├── report/              # Relatório final
 │   │   ├── cap1-introducao.md
 │   │   ├── cap2-desenho.md
-│   │   └── cap3-implementacao.md
+│   │   ├── cap3-implementacao.md
+│   │   ├── cap4-validacao.md
+│   │   └── cap5-conclusao.md
 │   ├── validation/          # Casos validação sistema
 │   │   ├── NOTAS.md
 │   │   ├── plano-validacao.md
-│   │   └── bug-noite-prematura.png
+│   │   ├── validacao_semana13_sessao1.docx
+│   │   ├── bug-noite-prematura.png
+│   │   └── screenshots/     # 21 screenshots sessão 1
 │   └── scope/               # MoSCoW, changelog
 │       ├── moscow.md
 │       └── changelog.md
@@ -144,4 +152,4 @@ Ver [docs/architecture/](docs/architecture/) para ADRs completos.
 
 ---
 
-*Última actualização: 2 junho 2026 · Semana 13*
+*Última actualização: 9 junho 2026 · Semana 14*
