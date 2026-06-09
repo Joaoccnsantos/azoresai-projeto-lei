@@ -198,7 +198,7 @@
 
 **Bloqueou:** Nada
 
-**Próxima semana:** Fevisão relatório final
+**Próxima semana:** Preparação defesa + revisão relatório final
 
 ---
 
